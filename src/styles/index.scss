@@ -1,0 +1,114 @@
+$primary:      #b12025; // CTA
+$primary_dark: #791214; // CTA
+
+$secondary: #35bbe9; // Success
+$secondary_dark: #35bbe9; // Success
+
+$tertiary:  #FF6400; // Error
+$tertiary_dark:  #FF6400; // Error
+
+
+$bg_dark_primary:   #1d1d1d;
+$bg_dark_secondary: #121212;
+$bg_dark_tertiary:  #373737;
+
+$light_primary:   #EEE;
+$light_secondary: #FFF;
+
+@mixin material-box-shadow {
+	box-shadow: 0 4px 8px rgba(0,0,0,.5);
+}
+@mixin nice-box-shadow {
+	box-shadow: 0 17px 51px 0 rgba(0,0,0,.11);
+}
+
+html,body {
+	background: $bg_dark_secondary;
+	color: $light_primary;
+	min-height: 100vh;
+	display: fixed;
+}
+header{ 
+	background: $bg_dark_primary;
+	min-height: 100vh;
+}
+
+
+a {
+	text-decoration: none;
+	color:$primary ;
+	&:hover{
+		color: $light_primary ;
+		text-decoration: none;
+	}
+}
+
+.btn {
+	display: inline-block;
+	cursor: pointer;
+	background:none;
+    font-weight: bold;
+	min-width: 100px;
+	text-align: center;
+	border: 1px solid $bg_dark_tertiary;
+	transition: 0.1s all;
+	outline: none;
+	padding:1em 2em;
+
+	&:hover{
+		background: $bg_dark_tertiary;
+	}
+	&:active{
+
+		background: $bg_dark_secondary;
+		border: 1px solid $bg_dark_secondary;
+	}
+	&:disabled{
+		background: transparent;
+		color: $bg_dark_tertiary;
+		border: 1px solid $bg_dark_tertiary;
+	}
+
+	&.btn--primary{
+		background: $primary;
+		color: $light_primary;
+		border: 1px solid $primary;
+	}
+	&.btn--primary:hover{
+		background: $primary;
+	}
+	&.btn--primary:active{
+		background: $primary_dark;
+		color:$light_primary;
+		border: 1px solid $primary_dark;
+	}
+
+	&.btn--secondary{
+		background: $secondary;
+		color: $light_primary;
+		border: 1px solid $secondary;
+	}
+	&.btn--secondary:hover{
+		background: $secondary;
+	}
+	&.btn--secondary:active{
+		background: $secondary_dark;
+		color:$light_primary;
+		border: 1px solid $secondary_dark;
+	}
+
+	&.btn--tertiary{
+		background: $tertiary;
+		color: $light_primary;
+		border: 1px solid $tertiary;
+	}
+	&.btn--tertiary:hover{
+		background: $tertiary;
+	}
+	&.btn--tertiary:active{
+		background: $tertiary_dark;
+		color:$light_primary;
+		border: 1px solid $tertiary_dark;
+	}
+
+}
