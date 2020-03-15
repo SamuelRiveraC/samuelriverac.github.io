@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import { Link } from "gatsby"
+import { Link,StaticQuery,graphql } from "gatsby"
 //import { StaticQuery , graphql } from "gatsby"
 
 
@@ -17,10 +17,41 @@ export default class Layout extends React.Component {
         <div className="row">
           <header className="col-3" >
             <Link to="/" >
-              here it goes StaticQuery
+
+              <StaticQuery
+                query={graphql`
+                  query {
+                    site {
+                      siteMetadata {
+                        title
+                      }
+                    }
+                  }
+                `}
+                render={(
+                  data
+                ) => (
+                  <h1>
+                    {data.site.siteMetadata.title}
+                  </h1>
+                )}
+              />
+              
             </Link>
             <Link to="/blog/">
-              Go to blog
+              My Work
+            </Link>
+            <Link to="/blog/">
+              About me
+            </Link>
+            <Link to="/blog/">
+              Blog
+            </Link>
+            <Link to="/blog/">
+              Contact me!
+            </Link>
+            <Link to="/blog/">
+              Download my CV
             </Link>
           </header>
           <main className="col-9" >
@@ -28,9 +59,9 @@ export default class Layout extends React.Component {
               <div className="col-12">
               {this.props.children}
               </div>
-              <div className="col-12">
+              <footer className="col-12">
                 © {new Date().getFullYear()} SamuelRiveraC.com All Rights reserved.
-              </div>
+              </footer>
             </div>
           </main>
         </div>

@@ -1,16 +1,42 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import Posts from "../components/posts"
 import SEO from "../components/seo"
 
-const Blog = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+const BlogIndex = ({ data, location }) => {
+  return (
+    <Layout>
+    	<SEO title="All posts" />
 
-export default Blog
+      <Posts postEdges={data.allMarkdownRemark.edges} />
+    	
+    </Layout>
+  )
+}
+
+export default BlogIndex
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC },
+      filter: {frontmatter: {posttype: {eq: "post"}}}
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`
