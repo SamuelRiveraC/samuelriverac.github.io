@@ -7,8 +7,6 @@
 
 import React from "react"
 import { Link,StaticQuery,graphql } from "gatsby"
-//import { StaticQuery , graphql } from "gatsby"
-
 
 export default class Layout extends React.Component {
   render () {
@@ -17,26 +15,10 @@ export default class Layout extends React.Component {
         <div className="row">
           <header className="col-3" >
             <Link to="/" >
-
               <StaticQuery
-                query={graphql`
-                  query {
-                    site {
-                      siteMetadata {
-                        title
-                      }
-                    }
-                  }
-                `}
-                render={(
-                  data
-                ) => (
-                  <h1>
-                    {data.site.siteMetadata.title}
-                  </h1>
-                )}
+                query={graphql` query { site { siteMetadata { title } } } `}
+                render={( data ) => ( <h1> {data.site.siteMetadata.title} </h1> )}
               />
-              
             </Link>
             <Link to="/blog/">
               My Work
