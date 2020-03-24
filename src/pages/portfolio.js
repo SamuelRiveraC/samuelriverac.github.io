@@ -1,24 +1,27 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Posts from "../components/posts"
+import Portfolio from "../components/portfolio"
 import SEO from "../components/seo"
 
-const BlogIndex = ({ data }) => (
+const PortfolioPage = ({data}) => (
   <Layout>
-  	<SEO title="All posts" />
-    <div className="blog w100" >
-      <Posts postEdges={data.allMarkdownRemark.edges} />
+    <SEO title="Portfolio" />
+    <div className="section_title">
+      My Work        
+    </div>
+    <div className="portfolio w100" >
+ 	   <Portfolio portfolios={data.allMarkdownRemark.edges}/>
     </div>
   </Layout>
 )
-export default BlogIndex
+export default PortfolioPage
 
-export const pageQuery = graphql`
+export const portfolioQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
-      filter: {frontmatter: {posttype: {eq: "post"}}}
+      filter: {frontmatter: {posttype: {eq: "portfolio"}}}
     ) {
       edges {
         node {

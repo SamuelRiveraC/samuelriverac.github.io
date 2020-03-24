@@ -20,16 +20,16 @@ export default class Layout extends React.Component {
                 render={( data ) => ( <h1> {data.site.siteMetadata.title} </h1> )}
               />
             </Link>
-            <Link to="/blog/">
+            <Link to="/portfolio/">
               My Work
             </Link>
-            <Link to="/blog/">
+            <Link to="/about/">
               About me
             </Link>
             <Link to="/blog/">
               Blog
             </Link>
-            <Link to="/blog/">
+            <Link to="/contact/">
               Contact me!
             </Link>
             <Link to="/blog/">

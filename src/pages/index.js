@@ -1,42 +1,72 @@
 import React from "react"
+import { graphql } from 'gatsby'
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import Portfolio from "../components/portfolio"
-import AboutMe from "../components/aboutme"
 import Blog from "../components/blog"
 
-const IndexPage = () => (
+const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
-    <Hero>
-      <div className="hero__subtitle"> FULL STACK WEB DEVELOPER </div>
-      <div className="hero__title"> SAMUEL </div>
-      <div className="hero__title hero__title--bold"> RIVERA C </div>
-    </Hero>
 
-    <Portfolio />
+    <Hero />
 
-    <AboutMe />
-
-    <Blog />
-
-    <button className="btn" disabled>
-      Disabled Lorem
-    </button>
-
-    <div className="btn btn--primary">
-      btn--primary
+    <div className="section_title">
+      My Work        
     </div>
-    <div className="btn btn--secondary">
-      btn--secondary
-    </div>
-    <div className="btn btn--tertiary">
-      btn--tertiary
-    </div>
+    <Portfolio portfolios={data.portfolios.edges}/>
 
+    <div className="section_title">
+      Want to learn cool stuff? read my blog!              
+    </div>
+    <Blog posts={data.posts.edges}/>
 
   </Layout>
 )
+export const query = graphql`
+  query Homepage {
+    posts: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC },
+      filter: {frontmatter: {posttype: {eq: "post"}}},
+      limit: 3
+
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+    portfolios: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC },
+      filter: {frontmatter: {posttype: {eq: "portfolio"}}},
+      limit: 2
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

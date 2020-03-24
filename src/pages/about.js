@@ -1,14 +1,22 @@
 import React from "react"
+import { StaticQuery,graphql } from "gatsby"
+import Img from "gatsby-image"
 
-export default class Aboutme extends React.Component {
-	render () {
-    	return (
-		<div className="aboutme row" >
-      
-      <div className="col-12 col-md-6">
-        
+import Layout from "../components/layout"
+import CTA from "../components/cta"
+import SEO from "../components/seo"
+
+const About = () => (
+  <Layout>
+    <SEO title="About me" />
+    <div className="aboutme row" >
+      <div className="col-12 col-md-4 aboutme__image">
+        <StaticQuery query={ graphql` 
+          query { file(relativePath: { eq: "hero.png" }) { childImageSharp { fluid(maxWidth: 1000) { ...GatsbyImageSharpFluid } } } }
+        `} render={data => ( <Img className="hero__background" fluid={data.file.childImageSharp.fluid} /> )}
+        />
       </div>
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-md-8 aboutme__content">
         <div className="section_title">
           About Me        
         </div>
@@ -29,6 +37,15 @@ export default class Aboutme extends React.Component {
         </p>
       </div>
   	</div>
-		);
-  	}
-}
+  
+    <CTA text="Contact me" />    
+
+    <div className="testimonials row" >
+
+    </div>
+
+
+  </Layout>
+)
+
+export default About

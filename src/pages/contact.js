@@ -1,6 +1,9 @@
-import React from "react"
-import axios from "axios";
 
+import React from "react"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -34,8 +37,8 @@ export default class Contact extends React.Component {
 	  this.handleChange = this.handleChange.bind(this);
 	  this.handleSubmit = this.handleSubmit.bind(this);
 	}	
-
   handleChange(input,event) {
+
 		this.validation(input,event.target.value)
   }
 	validation(input,value) {
@@ -47,8 +50,6 @@ export default class Contact extends React.Component {
 			this.setState({[input+'Valid']: value !== '' ? true : false});
 		}
 	}
-
-
   handleSubmit(event) {
     event.preventDefault();
 
@@ -88,26 +89,25 @@ export default class Contact extends React.Component {
       this.setState ({ responseIcon: "" })
     }, 10000);
   }
-
-
-
-	render () {
+  render () {
 		return (
-  		<div id="contact" className="contact">
-  			<h2 className="title"> I’d love to hear from you </h2>
+  		<Layout>
+  		
+      <SEO title="Contact me" />
+
+      <h2 className="section_title"> I’d love to hear from you </h2>
+
+  		<div id="contact" className="contact"> 
         <div className="row">
-          <div className="col">
-            <div className="contact__text">
-              Let's work together to create game-changing experience that will make your business reach the next level
-              <br />
-              I am ready ready to answer all your questions, contact me with this form and I will personally read it and answer you within 48 hours!
-            </div>
+          <div className="col-12 text-center">
+            Let's work together to create game-changing experience that will make your business reach the next level
+            <br />
+            I am ready ready to answer all your questions, contact me with this form and I will personally read it and answer you within 48 hours!
           </div>
         </div>
   			<form onSubmit={this.handleSubmit}>
-        
   			<div className="row">
-  				<div className="col">
+  				<div className="col-12 col-md-6">
 					  <div className="input">
 					    <label>Your name</label>
 					    <input type="text" value={this.state.names} onChange={this.handleChange.bind(this, 'names')} />
@@ -125,7 +125,7 @@ export default class Contact extends React.Component {
               </p>
 					  </div>
   				</div>
-  				<div className="col">
+  				<div className="col-12 col-md-6">
   					<div className="input">
 					    <label>About your business and website purpose</label>
 					    <textarea cols="30" onChange={this.handleChange.bind(this, 'message')}></textarea>
@@ -138,14 +138,16 @@ export default class Contact extends React.Component {
   			</div>
 			
   			<div className="contact__button_wrap">
-				<button type="submit" className="btn btn--cta" disabled={!this.state.namesValid || !this.state.emailValid || !this.state.messageValid}>
-					Submit?
-				</button>
-			</div>
+				  <button type="submit" className="btn btn--cta" disabled={!this.state.namesValid || !this.state.emailValid || !this.state.messageValid}>
+				  	Submit?
+				  </button>
+			  </div>
   			</form>
+
   			<br/>
-   			<div className="row">
-  				<div className="col">
+   			
+        <div className="row">
+  				<div className="col-12">
   					<div className={'alert alert--'+this.state.responseClass}>
 						<p className="title">{this.state.responseTitle} </p>
 						<p>{this.state.responseMessage} </p>
@@ -154,6 +156,7 @@ export default class Contact extends React.Component {
   				</div>
   			</div>
   		</div>
+  		</ Layout>
   		)
   	}
 }
