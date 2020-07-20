@@ -16,13 +16,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/blog/`,
-        name: 'blog',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/portfolio/`,
         name: 'portfolio',
       },
@@ -44,18 +37,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: "gatsby-plugin-categories",
-      options: {
-        templatePath: `${__dirname}/src/templates/category.js`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-tags",
-      options: {
-        templatePath: `${__dirname}/src/templates/tag.js`,
       },
     },
   ],

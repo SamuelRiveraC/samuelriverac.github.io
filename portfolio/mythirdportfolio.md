@@ -3,6 +3,7 @@ title: My work is AUHSDHÑASHDA AWESOME
 date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
 posttype: "portfolio"
+thumbnail: portfolio_placeholder.png
 ---
 
 REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE

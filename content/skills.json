@@ -1,0 +1,42 @@
+[
+	{
+		"image":"wordpress.png",
+		"text":"Wordpress"
+	},
+	{
+		"image":"divi.png",
+		"text":"Divi theme"
+	},
+	{
+		"image":"wordpress.png",
+		"text":"PHP"
+	},
+	{
+		"image":"node.png",
+		"text":"Node"
+	},
+	{
+		"image":"laravel.png",
+		"text":"Laravel"
+	},
+	{
+		"image":"adonis.png",
+		"text":"Adonis"
+	},
+	{
+		"image":"node.png",
+		"text":"ExpressJs"
+	},
+	{
+		"image":"react.png",
+		"text":"React"
+	},
+	{
+		"image":"vue.png",
+		"text":"Vue"
+	},
+	{
+		"image":"vue.png",
+		"text":"Vue"
+	}
+]

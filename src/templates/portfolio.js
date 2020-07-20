@@ -9,11 +9,8 @@ const PortfolioPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
-      <article>
+      <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
+      <article className="portfolio_article">
         <div>
           <h1>
             Portfolio: {post.frontmatter.title}
@@ -30,14 +27,14 @@ const PortfolioPostTemplate = ({ data, pageContext, location }) => {
         <ul>
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={'portfolio/'+previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={'portfolio/'+next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}

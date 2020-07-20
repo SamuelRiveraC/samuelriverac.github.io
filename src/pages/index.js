@@ -5,7 +5,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import Portfolio from "../components/portfolio"
-import Blog from "../components/blog"
+import WorkWithMe from "../components/workwithme"
+import WhatIDo from "../components/whatido"
+
 
 const IndexPage = ({data}) => (
   <Layout>
@@ -13,40 +15,31 @@ const IndexPage = ({data}) => (
 
     <Hero />
 
-    <div className="section_title">
+    <h2 className="section_title">
+      What I do        
+    </h2>
+    <WhatIDo />
+
+    <div className="separator" />
+
+    <h2 className="section_title">
       My Work        
-    </div>
+    </h2>
     <Portfolio portfolios={data.portfolios.edges}/>
 
-    <div className="section_title">
-      Want to learn cool stuff? read my blog!              
-    </div>
-    <Blog posts={data.posts.edges}/>
+    <div className="separator" />
+
+    <h2 className="section_title">
+      What's there for you. Work with me                                                                                   
+    </h2>
+    <WorkWithMe />
+
+    <div className="separator separator__op" />
 
   </Layout>
 )
 export const query = graphql`
   query Homepage {
-    posts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC },
-      filter: {frontmatter: {posttype: {eq: "post"}}},
-      limit: 3
-
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
     portfolios: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
       filter: {frontmatter: {posttype: {eq: "portfolio"}}},
@@ -62,6 +55,17 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            thumbnail {
+              childImageSharp {
+                fluid {
+                  src
+                  srcSet
+                  aspectRatio
+                  sizes
+                  base64
+                }
+              }
+            }
           }
         }
       }

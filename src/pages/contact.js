@@ -73,7 +73,7 @@ export default class Contact extends React.Component {
       } else {
       	this.setState ({ responseClass: "error" })
       	this.setState ({ responseTitle: "Sorry!" })
-      	this.setState ({ responseMessage: "Something went wrong! Please try again" })
+      	this.setState ({ responseMessage: "Something went wrong! You did everything ok! Please try again" })
         this.setState ({ responseIcon: "" })
       }
     })
@@ -84,10 +84,13 @@ export default class Contact extends React.Component {
 
     setTimeout(() => {
     	this.setState ({ responseClass: "none" })
+    }, 10000);
+
+    setTimeout(() => {
       this.setState ({ responseTitle: "" })
       this.setState ({ responseMessage: "" })
       this.setState ({ responseIcon: "" })
-    }, 10000);
+    }, 11000);
   }
   render () {
 		return (
@@ -95,9 +98,10 @@ export default class Contact extends React.Component {
   		
       <SEO title="Contact me" />
 
-      <h2 className="section_title"> I’d love to hear from you </h2>
+      <h2 className="section_title"> I want to hear from you </h2>
 
-  		<div id="contact" className="contact"> 
+  		<div id="contact" className="contact container"> 
+        
         <div className="row">
           <div className="col-12 text-center">
             Let's work together to create game-changing experience that will make your business reach the next level
@@ -105,56 +109,62 @@ export default class Contact extends React.Component {
             I am ready ready to answer all your questions, contact me with this form and I will personally read it and answer you within 48 hours!
           </div>
         </div>
-  			<form onSubmit={this.handleSubmit}>
-  			<div className="row">
+
+
+
+  			<form onSubmit={this.handleSubmit} className="row">
   				<div className="col-12 col-md-6">
 					  <div className="input">
-					    <label>Your name</label>
-					    <input type="text" value={this.state.names} onChange={this.handleChange.bind(this, 'names')} />
-					    <p className="error"> 
-                {(this.state.namesValid && !this.state.namesFirst) || (this.state.namesValid  === false && !this.state.namesFirst === false )  ?
-                   <br /> : 'Please enter your names'}
-                </p>
+					    <label for="name" >Your name</label>
+					    <input type="text" for="name" className="form-control" value={this.state.names} onChange={this.handleChange.bind(this, 'names')} />
+					    {(this.state.namesValid && !this.state.namesFirst) || (this.state.namesValid  === false && !this.state.namesFirst === false )  ?
+                   <br /> : <p className="error">  Please enter your names  </p> }
+               
 					  </div>
 					  <div className="input">
-					    <label>Your Email</label>
-					    <input type="email" onChange={this.handleChange.bind(this, 'email')} />
-					    <p className="error"> 
-                {(this.state.emailValid  && !this.state.emailFirst) || (this.state.emailValid  === false && !this.state.emailFirst === false) ?
-                   <br /> : 'Please enter your email in this format: yourname@example.com'}
-              </p>
+					    <label for="email" >Your Email</label>
+					    <input name="email" type="email"  className="form-control" onChange={this.handleChange.bind(this, 'email')} />
+					    {(this.state.emailValid  && !this.state.emailFirst) || (this.state.emailValid  === false && !this.state.emailFirst === false) ?
+                   <br /> : <p className="error"> Please enter your email in this format: yourname@example.com </p>}
+              
 					  </div>
   				</div>
+
   				<div className="col-12 col-md-6">
   					<div className="input">
-					    <label>About your business and website purpose</label>
-					    <textarea cols="30" onChange={this.handleChange.bind(this, 'message')}></textarea>
-					    <p className="error"> 
-                {(this.state.messageValid && !this.state.messageFirst) || (this.state.messageValid  === false && !this.state.messageFirst === false) ?
-                 <br /> : 'Please let me know about you! that\'s how I can help you :)'}
-              </p>
+					    <label for="message">About your business and your needs </label>
+					    <textarea name="message" cols="60" className="form-control"  onChange={this.handleChange.bind(this, 'message')}></textarea>
+					    {(this.state.messageValid && !this.state.messageFirst) || (this.state.messageValid  === false && !this.state.messageFirst === false) ?
+                 <br /> : <p className="error"> Please let me know about you! that's how I can help you :)  </p> }
 					  </div>
   				</div>
-  			</div>
-			
-  			<div className="contact__button_wrap">
-				  <button type="submit" className="btn btn--cta" disabled={!this.state.namesValid || !this.state.emailValid || !this.state.messageValid}>
-				  	Submit?
-				  </button>
-			  </div>
+
+          <div className="col-12 text-center">
+            <div className="contact__button_wrap">
+				      <button type="submit" className="btn btn--cta" disabled={!this.state.namesValid || !this.state.emailValid || !this.state.messageValid}>
+				  	    Submit?
+				      </button>
+            </div>
+			    </div>
   			</form>
 
   			<br/>
-   			
+
         <div className="row">
-  				<div className="col-12">
+  				<div className="col-12 text-center">
   					<div className={'alert alert--'+this.state.responseClass}>
 						<p className="title">{this.state.responseTitle} </p>
 						<p>{this.state.responseMessage} </p>
-						<p><FontAwesomeIcon icon={this.state.responseClass === 'error' ? faExclamationTriangle : faCheckCircle} size="2x" /></p>
+						{this.state.responseClass !== "none" && 
+              <p><FontAwesomeIcon icon={this.state.responseClass === 'error' ? faExclamationTriangle : faCheckCircle} size="2x" /></p>
+            }
   					</div>
   				</div>
   			</div>
+
+
+
+
   		</div>
   		</ Layout>
   		)
