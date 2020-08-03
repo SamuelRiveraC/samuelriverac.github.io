@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import CV from "../components/cv"
 import Skills from "../../content/skills.json"
 
@@ -16,19 +17,42 @@ export default class WhatIDo extends React.Component {
     			<p>
     			  I am fueled by an obsessive passion to become better everyday and helping you, the small business or startup owner, to do the same. Creating and updating websites or web applications that solve real problems, benefiting your company in valuable ways.
     			</p>
-    			<br />
     			<p>
     			  Technologies i often use:
     			</p>
-          
-          <div className="row"> 
-            {Skills.map((data, index) => {
-              return <div className="col-6 row align-items-center mb-3"> 
-                <div className="col-3"> <img src={"/skills/"+data.image} alt={data.text} width="48px"/> </div>
-                <div className="col-9"> {data.text} </div>
+
+
+          <div className="badge"> 
+            <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
+          </div>
+
+
+          <div className="badge text-left px-0 mx-0 mt-3 mb-1">Back end</div>
+          <div className="row backend"> 
+            {Skills.back.map((data, index) => {
+              return <div className="badge"> 
+                {data}
+              </div>
+
+            })}
+          </div>
+          <div className="badge text-left px-0 mx-0 mt-3 mb-1">Front end</div>
+          <div className="row front"> 
+            {Skills.front.map((data, index) => {
+              return <div className="badge"> 
+                {data}
               </div>
             })}
           </div>
+          <div className="badge text-left px-0 mx-0 mt-3 mb-1">Databases</div>
+          <div className="row db"> 
+            {Skills.db.map((data, index) => {
+              return <div className="badge"> 
+                {data}
+              </div>
+            })}
+          </div>
+
 
 
 	    	</div>
@@ -45,9 +69,9 @@ export default class WhatIDo extends React.Component {
     			</p>
 	    	</div>
 	    	<div className="w100 text-center">
-          <div className="btn btn--primary m-3">
-              Know more about me
-          </div>
+          <Link className="btn btn--primary m-3" to="/contact" >
+            Know more about me
+          </Link>
           <CV extraClasses="m-3"/>
 	    	</div>
 	    </div>

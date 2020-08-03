@@ -73,7 +73,7 @@ export default class Contact extends React.Component {
       } else {
       	this.setState ({ responseClass: "error" })
       	this.setState ({ responseTitle: "Sorry!" })
-      	this.setState ({ responseMessage: "Something went wrong! You did everything ok! Please try again" })
+      	this.setState ({ responseMessage: "Something went wrong! But You did everything ok! Please try again" })
         this.setState ({ responseIcon: "" })
       }
     })
@@ -133,7 +133,7 @@ export default class Contact extends React.Component {
   				<div className="col-12 col-md-6">
   					<div className="input">
 					    <label for="message">About your business and your needs </label>
-					    <textarea name="message" cols="60" className="form-control"  onChange={this.handleChange.bind(this, 'message')}></textarea>
+					    <textarea name="message" className="form-control"  onChange={this.handleChange.bind(this, 'message')}></textarea>
 					    {(this.state.messageValid && !this.state.messageFirst) || (this.state.messageValid  === false && !this.state.messageFirst === false) ?
                  <br /> : <p className="error"> Please let me know about you! that's how I can help you :)  </p> }
 					  </div>

@@ -1,27 +1,22 @@
 [
 	{
-		"icon":"/static/gatsby-icon.png",
 		"text":"Email",
 		"link":"contact@samuelriverac.com"
 	},
 	{
-		"icon":"/static/gatsby-icon.png",
 		"text":"Facebook",
 		"link":"https://facebook.com/samuelriverac"
 	},
 	{
-		"icon":"/static/gatsby-icon.png",
 		"text":"Instagram",
 		"link":"https://instagram.com/riverasr"
 	},
 	{
-		"icon":"/static/gatsby-icon.png",
 		"text":"Linkedin",
 		"link":"https://linkedin.com/samuelriverac"
 	},
 	{
-		"icon":"/static/gatsby-icon.png",
 		"text":"Github",
-		"link":"https://linkedin.com/samuelriverac"
+		"link":"https://github.com/samuelriverac"
 	}
 ]

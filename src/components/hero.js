@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery,graphql } from "gatsby"
+import { Link,StaticQuery,graphql } from "gatsby"
 import Img from "gatsby-image"
 import CV from "../components/cv"
 
@@ -8,6 +8,8 @@ export default class Hero extends React.Component {
 	render () {
     	return (
 		<div className="hero row" >
+      
+      <div className="hero__overlay"> </div>
 
       <StaticQuery
          query={graphql`
@@ -30,24 +32,18 @@ export default class Hero extends React.Component {
       <div className="col-12 col-md-6 px-1 px-lg-3 px-xl-5">
         <div className="hero__headline">
 
-          <div className="hero__title">
-            SAMUEL RIVERA
-          </div>
+          <h1 className="hero__title">
+            SAMUEL RIVERA C
+          </h1>
 
-          <div className="hero__subtitle">
+          <h2 className="hero__subtitle">
             FULL STACK WEB DEVELOPER
-          </div>
-  
-          <div className="hero__content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nulla, reiciendis, cum iure nemo excepturi! Expedita mollitia quas laudantium doloribus velit consectetur hic repellendus, dignissimos minima quis unde blanditiis labore.
-          </div>
-
+          </h2>
 
           <div className="row justify-content-center">  
-            <div className="btn btn--primary mx-3 mt-3">  
+            <Link className="btn btn--primary mx-3 mt-3" to="/contact" >
               &nbsp;&nbsp;&nbsp;&nbsp; Contact me &nbsp;&nbsp;&nbsp;&nbsp;
-            </div>
-
+            </Link>
             <CV extraClasses="mx-3 mt-3"/>
           </div>
         </div>

@@ -29,12 +29,8 @@ const IndexPage = ({data}) => (
 
     <div className="separator" />
 
-    <h2 className="section_title">
-      What's there for you. Work with me                                                                                   
-    </h2>
-    <WorkWithMe />
 
-    <div className="separator separator__op" />
+    <WorkWithMe />
 
   </Layout>
 )

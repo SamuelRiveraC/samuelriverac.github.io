@@ -16,7 +16,6 @@ const PortfolioPage = ({data}) => (
 
     <Portfolio portfolios={data.allMarkdownRemark.edges}/>
     
-    <div className="separator" />
     <Testimonials />
     <div className="separator" />
     <CallToAction />

@@ -1,42 +1,39 @@
-[
-	{
-		"image":"wordpress.png",
-		"text":"Wordpress"
-	},
-	{
-		"image":"divi.png",
-		"text":"Divi theme"
-	},
-	{
-		"image":"wordpress.png",
-		"text":"PHP"
-	},
-	{
-		"image":"node.png",
-		"text":"Node"
-	},
-	{
-		"image":"laravel.png",
-		"text":"Laravel"
-	},
-	{
-		"image":"adonis.png",
-		"text":"Adonis"
-	},
-	{
-		"image":"node.png",
-		"text":"ExpressJs"
-	},
-	{
-		"image":"react.png",
-		"text":"React"
-	},
-	{
-		"image":"vue.png",
-		"text":"Vue"
-	},
-	{
-		"image":"vue.png",
-		"text":"Vue"
-	}
-]
+{
+	"back":[
+		"🐘 PHP",
+		"🐘 Codeigniter",
+		"🐘 Laravel",
+		"🐘 Wordpress",
+		"☕️ Javascript",
+		"☕️ NodeJs",
+		"☕️ AdonisJs",
+		"☕️ ExpressJs",
+		"🐍 Python"
+	],
+	"front":[
+		"HTML5 + CSS3",
+		"Bootstrap",
+		"Sass",
+		"☕️ JQuery",
+		"☕️ React",
+		"☕️ Redux",
+		"☕️ NextJS",
+		"☕️ GatsbyJs",
+		"☕️ Vue",
+		"☕️ Vuex",
+		"☕️ NuxtJS ",
+		"☕️ ChartJs"
+	],
+	"db":[
+		"🐬 Mysql",
+		"🐬 PostgreSQL",
+		"🤖 MongoDB",
+		"Apollo/GraphQL"
+	],
+	"tools":[
+		"Git",
+		"Trello",
+		"Figma",
+		"Insomnia"
+	]
+}
