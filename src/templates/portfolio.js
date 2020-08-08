@@ -49,7 +49,7 @@ const PortfolioPostTemplate = ({ data, pageContext, location }) => {
           </div>
 
           <div className="col-12 col-md-8">
-            <section dangerouslySetInnerHTML={{ __html: post.description }} />
+            <section dangerouslySetInnerHTML={{ __html: post.frontmatter.description }} />
           </div>
 
           <div className="col-12 col-md-12 mt-3 text-center">
@@ -112,7 +112,18 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        excerpt
         description
+        posttype
+        role
+        client
+        dateProject
+        location
+        website
+        repository
+        testimonial
+        testimonialAuthor
+        testimonialRole
       }
     }
   }
