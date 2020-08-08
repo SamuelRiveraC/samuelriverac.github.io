@@ -1,11 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Fade from 'react-reveal/Fade';
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Portfolio from "../components/portfolio"
-
 import Testimonials from "../components/testimonials.js"
-import CallToAction from "../components/calltoaction.js"
+import WorkWithMe from "../components/workwithme.js"
 
 const PortfolioPage = ({data}) => (
   <Layout>
@@ -16,9 +17,16 @@ const PortfolioPage = ({data}) => (
 
     <Portfolio portfolios={data.allMarkdownRemark.edges}/>
     
-    <Testimonials />
+
+    <Fade bottom>
+      <Testimonials />
+    </Fade>
+
     <div className="separator" />
-    <CallToAction />
+    
+    <Fade bottom>
+      <WorkWithMe />
+    </Fade>
 
 
   </Layout>

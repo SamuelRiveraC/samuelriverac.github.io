@@ -1,14 +1,15 @@
 import React from "react"
 import { StaticQuery,graphql } from "gatsby"
 import Img from "gatsby-image"
+import Fade from 'react-reveal/Fade';
+
+
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import Testimonials from "../components/testimonials.js"
 import CallToAction from "../components/calltoaction.js"
-
-
 
 
 const About = () => (
@@ -46,7 +47,9 @@ const About = () => (
       </div>
   	</div>
     
-    <Testimonials />
+    <Fade bottom>
+      <Testimonials />
+    </Fade>
 
     <div className="separator" />
     

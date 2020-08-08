@@ -1,6 +1,9 @@
 import React from "react"
 import { graphql } from 'gatsby'
 
+import Fade from 'react-reveal/Fade';
+
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
@@ -9,23 +12,28 @@ import WorkWithMe from "../components/workwithme"
 import WhatIDo from "../components/whatido"
 
 
+
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
-
+    
     <Hero />
 
-    <h2 className="section_title">
-      What I do        
-    </h2>
-    <WhatIDo />
+    <Fade bottom>
+      <h2 className="section_title">
+        What I do          
+      </h2>
+      <WhatIDo />
+    </Fade>
 
     <div className="separator" />
 
-    <h2 className="section_title">
-      My Work        
-    </h2>
-    <Portfolio portfolios={data.portfolios.edges}/>
+    <Fade bottom>
+      <h2 className="section_title">
+        My Work        
+      </h2>
+      <Portfolio portfolios={data.portfolios.edges}/>
+    </Fade>
 
     <div className="separator" />
 

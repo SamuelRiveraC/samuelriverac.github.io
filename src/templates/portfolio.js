@@ -10,56 +10,73 @@ const PortfolioPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
       
-      <article className="container-fluid p-0 portfolio_article">
+      <article className="container p-0 portfolio_article">
         <div className="row justify-content-center">
+
           <div className="col-12">
             <h1 className="section_title my-5">
               {post.frontmatter.title}
             </h1>
           </div>
 
-          <div className="col-12 col-md-4 problem_image">
-            <img src="/gatsby-icon.png" width="128px"/>
+          <div className="col-12 col-md-4">
+            <div className="row">          
+              <div className="col-12">
+                <p><b> My Role </b></p>
+                <p>{post.frontmatter.role}</p>
+              </div>
+              <div className="col-12">
+                <p><b> The Client </b></p>
+                <p>{post.frontmatter.client}</p>
+              </div>
+              <div className="col-12">
+                <p><b> Date </b></p>
+                <p>{post.frontmatter.dateProject}</p>
+              </div> 
+              <div className="col-12">
+                <p><b> Location </b></p>
+                <p>{post.frontmatter.location}</p>
+              </div> 
+              <div className="col-12">
+                <p><b><a href={post.frontmatter.website}> See it live </a></b></p>
+              </div> 
+              <div className="col-12">
+                <p><b><a href={post.frontmatter.repository}> Check the repository </a></b></p>
+              </div> 
+            </div>
           </div>
-          <div className="col-12 col-md-6 problem_content">
+
+          <div className="col-12 col-md-8">
+            <section dangerouslySetInnerHTML={{ __html: post.description }} />
+          </div>
+
+          <div className="col-12 col-md-12 mt-3 text-center">
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
-          <div className="offset-md-2"></div>
-          
 
-          <div className="offset-md-2"></div>
-          <div className="col-12 col-md-8 action">
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
-          <div className="offset-md-2"></div>
 
-          <div className="offset-md-2"></div>
-          <div className="col-12 col-md-6 result_content">
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
-          
-          <div className="col-12 col-md-4 result_image">
+          <div className="col-12 col-md-12 mt-3 text-center">
+            <h6>Client testimonial</h6>
+            <section dangerouslySetInnerHTML={{ __html: post.testimonial }} />
+            <small><b> {post.frontmatter.testimonialAuthor} </b></small> <br /> 
+            <small>{post.frontmatter.testimonialRole}</small>  
           </div>
 
-          <div className="col-12">
-            sitio
-
-            git
-          </div>
-          
-
-          
         </div>
 
         <hr />
 
       </article>
 
-      <div className="container"> 
+
+      <div className="container mt-5"> 
         <div className="row">
           <div className="col-12 text-center">
+            <h4>Check more projects</h4>
+          </div>
+          <div className="col-12 mt-3 text-center">
             {previous && (
               <Link className="btn mx-3" to={'portfolio/'+previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}

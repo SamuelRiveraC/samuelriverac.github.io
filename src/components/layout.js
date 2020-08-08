@@ -18,14 +18,18 @@ const icons = {"Email" :faEnvelope,  "Facebook" :faFacebook,  "Instagram" :faIns
 export default class Layout extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      navbar: false,
+      navbar: false
     }
+
+    
   }
 
   render () {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid"> 
+        
         <div className="row">
           <div className="nav__open" onClick={() => this.setState({navbar:!this.state.navbar})}>
             <FontAwesomeIcon icon={faBars} size="2x" /> 
@@ -41,20 +45,20 @@ export default class Layout extends React.Component {
               </div>
             </div>
 
-            <Link to="/" >
-              Home
+            <Link to="/"  onClick={() => this.setState({navbar:!this.state.navbar})} >
+              Home 
             </Link>
-            <Link to="/portfolio/">
+            <Link to="/portfolio/" onClick={() => this.setState({navbar:!this.state.navbar})} >
               My Work
             </Link>
-            <Link to="/about/">
+            <Link to="/about/" onClick={() => this.setState({navbar:!this.state.navbar})} >
               About me
             </Link>
-            <Link to="/contact/">
+            <Link to="/contact/" onClick={() => this.setState({navbar:!this.state.navbar})} >
               Contact me!
             </Link>
-            <Link to="/">
-              Download my CV
+            <Link to="/" onClick={() => this.setState({navbar:!this.state.navbar})} >
+              Check my CV
             </Link>
           </nav>
 
@@ -64,7 +68,7 @@ export default class Layout extends React.Component {
 
           <footer className="col-12">
             <div className="row justify-content-center">
-              <div className="col-1">
+              <div className="col-4 col-sm-2 col-md-2 col-lg-1">
                 <StaticQuery
                   query={graphql` query { file(relativePath: { eq: "SRC-Logo.png" }) { childImageSharp { fluid(maxWidth: 128) { ...GatsbyImageSharpFluid } } } } `}
                   render={data => (

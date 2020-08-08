@@ -9,6 +9,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.8",
+    "animate.css": "^4.1.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "gatsby": "^2.19.7",
@@ -30,10 +31,12 @@
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.12.0",
     "react-fontawesome": "^1.7.1",
     "react-helmet": "^5.2.1",
     "react-responsive-carousel": "^3.2.9",
+    "react-reveal": "^1.2.2",
     "slick-react": "^1.0.0"
   },
   "devDependencies": {
