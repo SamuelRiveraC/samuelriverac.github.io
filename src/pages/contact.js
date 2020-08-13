@@ -98,15 +98,17 @@ export default class Contact extends React.Component {
   		
       <SEO title="Contact me" />
 
-      <h2 className="section_title"> I want to hear from you </h2>
+      <h2 className="section_title"> I’m ready for the next big project. Challenge me! </h2>
 
   		<div id="contact" className="contact container"> 
         
         <div className="row">
           <div className="col-12 text-center">
-            Let's work together to create game-changing experience that will make your business reach the next level
+            Whatever your needs and goals are contact me! 
+            Please share as much info, as possible so we can get the most out of our first talk.
+            You can also email me at <a href="mailto:contact@samuelriverac.com">contact@samuelriverac.com </a>
             <br />
-            I am ready ready to answer all your questions, contact me with this form and I will personally read it and answer you within 48 hours!
+            I am ready to answer all your questions, I will personally read it and answer you within 48 hours!
           </div>
         </div>
 

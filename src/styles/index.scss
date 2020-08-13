@@ -419,6 +419,10 @@ a {
 		font-size: 1.2em !important;
 	}
 }
+
+@media screen and (max-width: 425px) {
+	
+}
 .section_title {
 	width: 100%;
 	text-align: center;
@@ -533,10 +537,11 @@ portfolio__link
 
 }
 
-.portfolio_article {
-	
+.portfolio_container {
+	img {
+		width: 100%;
+	}
 }
-
 
 .card {
 	min-height:10em;
@@ -628,10 +633,11 @@ textarea { min-height: 10.8em; }
 	&.carousel-slider {
 		@include shadow_i;
 	} .slide { 
-		@include shadow_i;
 		border-radius:5px;
+		background: $gs_ii !important;
 	} .card {
 		margin:0;
+		box-shadow: none;
 	} 
 
 	.control-dots {

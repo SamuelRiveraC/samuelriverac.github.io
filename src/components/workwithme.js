@@ -7,14 +7,16 @@ export default class WorkWithMe extends React.Component {
     <div className="row justify-content-center calltoaction divider_container">
       <div className="col-12 col-md-8" >
         <h2 className="section_title">
-          What's there for you. Work with me                                                                                   
+          Are you Looking for a new developer?
+          <br/>
+          or do you want to talk about your new project?
+          <br/>
+          I'm currently available for work
         </h2>
       </div>
 
     	<div className="col-12 col-md-8 text-center">
-    		What's in for you --- I am Ideal for remote jobs :D I am a problem solver good at everything, master developer kek 
-    		<br/>
-    		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tenetur magni unde eos at distinctio placeat, perferendis quasi sit, earum dolorum dolores suscipit aliquid pariatur. Iure qui mollitia culpa accusamus.
+        I always love a new challenge, let's work together, contact me with this form and I will personally read it and answer you within 48 hours! The more information you can provide the better please that's how I can help you the best.
 	    </div>
 	    <div className="col-12 col-md-8 text-center my-5" >
         <Link className="btn btn--light m-3" to="/contact" >
@@ -27,3 +29,9 @@ export default class WorkWithMe extends React.Component {
     </div>
   ) }
 }
+
+
+
+
+
+

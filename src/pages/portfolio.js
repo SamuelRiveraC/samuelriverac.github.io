@@ -17,7 +17,6 @@ const PortfolioPage = ({data}) => (
 
     <Portfolio portfolios={data.allMarkdownRemark.edges}/>
     
-
     <Fade bottom>
       <Testimonials />
     </Fade>

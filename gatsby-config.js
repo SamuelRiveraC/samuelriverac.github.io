@@ -8,7 +8,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
@@ -47,6 +46,29 @@ module.exports = {
           `montserrat\:400,500,700,800,900:`,
         ],
         display: 'swap'
+      }
+    },
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 768,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 768,
+              linkImagesToOriginal: false,
+              sizeByPixelDensity: true,
+              showCaptions: true
+            }
+          },
+        ]
       }
     },
   ],

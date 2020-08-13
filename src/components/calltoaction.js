@@ -12,6 +12,12 @@ export default class CallToAction extends React.Component {
       </div>
 
       <div className="col-12 col-md-8 text-center" >
+        <h3>  
+          Looking for a new developer? I'm Currently available for work
+        </h3>  
+        <p>  
+          
+        </p>  
         What's in for you --- I am Ideal for remote jobs :D I am a problem solver good at everything, master developer kek 
         <br/>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tenetur magni unde eos at distinctio placeat, perferendis quasi sit, earum dolorum dolores suscipit aliquid pariatur. Iure qui mollitia culpa accusamus.

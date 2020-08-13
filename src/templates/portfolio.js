@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import CallToAction from "../components/calltoaction"
+import WorkWithMe from "../components/workwithme"
 
 const PortfolioPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -22,47 +22,54 @@ const PortfolioPostTemplate = ({ data, pageContext, location }) => {
           </div>
 
           <div className="col-12 col-md-4">
-            <div className="row">          
-              <div className="col-12">
+            <div className="row">
+
+              {post.frontmatter.role !== "" && <div className="col-12">
                 <p><b> My Role </b></p>
                 <p>{post.frontmatter.role}</p>
-              </div>
-              <div className="col-12">
+              </div>}
+
+              {post.frontmatter.client !== "" && <div className="col-12">
                 <p><b> The Client </b></p>
                 <p>{post.frontmatter.client}</p>
-              </div>
-              <div className="col-12">
+              </div>}
+
+              {post.frontmatter.dateProject !== "" && <div className="col-12">
                 <p><b> Date </b></p>
                 <p>{post.frontmatter.dateProject}</p>
-              </div> 
-              <div className="col-12">
+              </div>}
+
+              {post.frontmatter.location !== "" && <div className="col-12">
                 <p><b> Location </b></p>
                 <p>{post.frontmatter.location}</p>
-              </div> 
-              <div className="col-12">
+              </div>}
+
+              {post.frontmatter.website !== "" && <div className="col-12">
                 <p><b><a href={post.frontmatter.website}> See it live </a></b></p>
-              </div> 
-              <div className="col-12">
+              </div>}
+
+              {post.frontmatter.repository !== "" && <div className="col-12">
                 <p><b><a href={post.frontmatter.repository}> Check the repository </a></b></p>
-              </div> 
+              </div>}
+
             </div>
           </div>
 
-          <div className="col-12 col-md-8">
+          {post.frontmatter.description !== "" && <div className="col-12 col-md-8">
             <section dangerouslySetInnerHTML={{ __html: post.frontmatter.description }} />
-          </div>
+          </div> }
 
-          <div className="col-12 col-md-12 mt-3 text-center">
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
+          {post.html !== "" && <div className="col-12 col-md-12 mt-3 text-center ">
+            <section className="portfolio_container" dangerouslySetInnerHTML={{ __html: post.html }} />
+          </div> }
 
 
-          <div className="col-12 col-md-12 mt-3 text-center">
+          {post.frontmatter.testimonial !== "" && <div className="col-12 col-md-12 mt-3 text-center">
             <h6>Client testimonial</h6>
-            <section dangerouslySetInnerHTML={{ __html: post.testimonial }} />
+            <section dangerouslySetInnerHTML={{ __html: post.frontmatter.testimonial }} />
             <small><b> {post.frontmatter.testimonialAuthor} </b></small> <br /> 
             <small>{post.frontmatter.testimonialRole}</small>  
-          </div>
+          </div> }
 
         </div>
 
@@ -70,8 +77,9 @@ const PortfolioPostTemplate = ({ data, pageContext, location }) => {
 
       </article>
 
+      
 
-      <div className="container mt-5"> 
+      {(previous || next) && <div className="container mt-5"> 
         <div className="row">
           <div className="col-12 text-center">
             <h4>Check more projects</h4>
@@ -89,11 +97,11 @@ const PortfolioPostTemplate = ({ data, pageContext, location }) => {
             )}
           </div>
         </div>
-      </div>
+      </div> }
       
       <div className="separator" />
 
-      <CallToAction />
+      <WorkWithMe />
 
     </Layout>
   )
