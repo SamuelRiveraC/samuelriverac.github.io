@@ -32,6 +32,8 @@ export default class Hero extends React.Component {
       <div className="col-12 col-md-6 px-1 px-lg-3 px-xl-5">
         <div className="hero__headline">
 
+          <img width="128" src="/SRC-Logo.png" alt="Samuel Rivera C Logo" />
+
           <h2 className="hero__title">
             I am Samuel Rivera 
           </h2>
