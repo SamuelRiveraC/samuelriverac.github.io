@@ -86,6 +86,14 @@ html,body {
 	overflow-x: hidden;
 	position:relative;
 }
+@media screen and (min-width: 2560px) {
+	html,body {
+		font-size: 24px;
+	}
+
+ }
+
+
 .logo {
 	position: fixed;
 	top:2em; left:2em;
@@ -419,9 +427,27 @@ a {
 	}
 }
 
-@media screen and (max-width: 425px) {
-	
+
+.aboutme{
+	background: $gs_iii;
+	@include shadow_iii;
+	img {
+		z-index:2;
+	}
 }
+@media screen and (max-width: 1440px) {
+	.aboutme {
+		align-items: flex-end!important;
+	}
+}
+@media screen and (max-width: 768px) {
+	.aboutme{
+		img {
+			display: none;
+		}
+	}
+}
+
 .section_title {
 	width: 100%;
 	text-align: center;
@@ -633,10 +659,11 @@ textarea { min-height: 10.8em; }
 		@include shadow_i;
 	} .slide { 
 		border-radius:5px;
-		background: $gs_ii !important;
+		background: $gs_iii !important;
 	} .card {
 		margin:0;
 		box-shadow: none;
+		background: $gs_iii !important;
 	} 
 
 	.control-dots {
@@ -685,33 +712,12 @@ textarea { min-height: 10.8em; }
 				border-style: solid;
 			}
 			&::before {
-				border-width: 0 50vw 7.5em 50vw;
-				border-color: transparent transparent rgba(255,255,255,0.1) transparent;
+				border-width: 0 50vw 5em 50vw;
+				border-color: transparent transparent $gs_i transparent;
 			}
 			&::after {
 				border-width: 0 50vw 5em 50vw;
 				border-color: transparent transparent $gs_i transparent;
-			}
-		}
-
-		&.upper {
-			top: 0px; left:0;
-			width: 100%;
-			&::before, &::after {
-				position: absolute;
-				content: '';
-				top: 0; left:-10px;
-				height: 0;
-				width: 100%;
-				border-style: solid;
-			}
-			&::before {
-				border-width: 7.5em 50vw 0 50vw;
-				border-color: rgba(255,255,255,0.1) transparent transparent transparent;
-			}
-			&::after {
-				border-width: 5em 50vw 0 50vw;
-				border-color: $gs_i transparent transparent transparent;
 			}
 		}
 	}

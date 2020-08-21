@@ -17,14 +17,14 @@ const About = () => (
     <SEO title="About me" />
 
     <div className="aboutme row" >
-      <div className="col-12 col-md-4 px-0 pr-md-2 aboutme__image">
+      <div className="col-12 col-md-1 col-lg-4 px-0 pr-md-2 aboutme__image">
         <StaticQuery query={ graphql` 
-          query { file(relativePath: { eq: "hero.png" }) { childImageSharp { fluid(maxWidth: 1000) { ...GatsbyImageSharpFluid } } } }
+          query { file(relativePath: { eq: "PROFILE ABOUT ME.png" }) { childImageSharp { fluid(maxWidth: 1000) { ...GatsbyImageSharpFluid } } } }
           `} render={data => ( <Img className="hero__background" fluid={data.file.childImageSharp.fluid} /> )}
         />
 
       </div>
-      <div className="col-12 col-md-8 aboutme__content">
+      <div className="col-12 col-md-12 col-lg-8 aboutme__content">
         <h3 className="section_title my-5">   About Me   </h3>
         <p>  
           I am a Computer Systems Engineer working as a Freelancer since 2017. I've been working remotely with small businesses around the US, Europe, and South America.
@@ -39,7 +39,7 @@ const About = () => (
           Another wish of mine and what drives me forward is that I currently live in Venezuelan and local job offers aren't really fulfilling, and often very "legally flexible" (against the workers, if you catch my drift) so I turned online. Hundred of opportunities appeared and I had to learn how to manage my own time and projects, learn about digital marketing, branding, customer service, and how to sell myself. Before I even realized I was not only a software developer but a businessman; the strategist, the designer, and the developer. 
         </p>  
         <p>  
-          Since I am a developer my favorites technologies are WordPress, Laravel, and its JS cousin Adonis; Gatsby, and React and Vue (these pairs do the same but I love both).
+          My favorites technologies are WordPress, Laravel, and its JS cousin Adonis; Gatsby; React and Vue (both do the same but I love them).
         </p>  
         <p>  
           When I'm not developing and building things, you can find me on Youtube learning, training at the gym, learning languages, watching anime, playing videogames, or worldbuilding.
