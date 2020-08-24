@@ -106,7 +106,7 @@ export default class Contact extends React.Component {
           <div className="col-12 text-center">
             Whatever your needs and goals are contact me! 
             Please share as much info, as possible so we can get the most out of our first talk.
-            You can also email me at <a href="mailto:contact@samuelriverac.com">contact@samuelriverac.com </a>
+            You can also email me at <a href="mailto:samuelrivera64@gmail.com">samuelrivera64@gmail.com </a>
             <br />
             I am ready to answer all your questions, I will personally read it and answer you within 48 hours!
           </div>

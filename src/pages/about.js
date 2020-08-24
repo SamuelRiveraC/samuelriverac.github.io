@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery,graphql } from "gatsby"
+import { Link,StaticQuery,graphql } from "gatsby"
 import Img from "gatsby-image"
 import Fade from 'react-reveal/Fade';
 
@@ -27,7 +27,7 @@ const About = () => (
       <div className="col-12 col-md-12 col-lg-8 aboutme__content">
         <h3 className="section_title my-5">   About Me   </h3>
         <p>  
-          I am a Computer Systems Engineer working as a Freelancer since 2017. I've been working remotely with small businesses around the US, Europe, and South America.
+          I am a Computer Systems Engineer working as a Freelancer since 2018. I've been working remotely with small businesses around the US, Europe, and South America.
         </p>  
         <p>  
           Since I remember I always liked using computers playing videogames, drawing things, and assembling Legos. Eventually, I started to install mods on my videogames and even tweaking bits on a notepad. But it was at college where everything changed, I went to a coding course, and since then there have been very few days where I don't do any code because I love it! 
@@ -45,7 +45,7 @@ const About = () => (
           When I'm not developing and building things, you can find me on Youtube learning, training at the gym, learning languages, watching anime, playing videogames, or worldbuilding.
         </p>  
         <p>  
-          I'm available for remote full/part-time jobs or contracts. Just Email me at contact@samuelriverac.com or click the contact form below
+          I'm available for remote full/part-time jobs or contracts. Just Email me at <a href="mailto:samuelrivera64@gmail.com">samuelrivera64@gmail.com</a> or <Link to="/contact/"> click here to go to the contact form </Link>
         </p>  
       </div>
   	</div>
