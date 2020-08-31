@@ -759,8 +759,7 @@ textarea { min-height: 10.8em; }
 
 /*TABLET RESPONSIVENESS*/
 @media screen and (max-width: 768px) {
-	.hero .hero__overlay {
-	}
+	
 	nav a {
 		font-size: 2.4em;
 		line-height: 1.8em;
@@ -789,6 +788,13 @@ textarea { min-height: 10.8em; }
 	.nav__open, nav .nav__icon_container .nav__close {
 		margin-left:1.8em !important;
 	}
+	.hero {
+		background: #989898;
+		.hero__background,.hero__arrow {
+			display: none;
+		}
+	}
+
 
 }
 

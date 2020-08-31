@@ -36,7 +36,7 @@ const About = () => (
           Creating solutions to problems, even if they are small things became an infinite source of logical but fun puzzles, and I always love a practical case for the code I develop. I ended up graduating and acquiring my degree in Computer Systems engineering with a profile oriented to analysis, development, and implementation of web systems
         </p>  
         <p>  
-          Another wish of mine and what drives me forward is that I currently live in Venezuelan and local job offers aren't really fulfilling, and often very "legally flexible" (against the workers, if you catch my drift) so I turned online. Hundred of opportunities appeared and I had to learn how to manage my own time and projects, learn about digital marketing, branding, customer service, and how to sell myself. Before I even realized I was not only a software developer but a businessman; the strategist, the designer, and the developer. 
+          Another wish of mine and what drives me forward is that I currently live in Venezuelan and local job offers aren't really fulfilling, so I turned online. Hundred of opportunities appeared and I had to learn how to manage my own time and projects, learn about digital marketing, branding, customer service, and how to sell myself. Before I even realized I was not only a software developer but a businessman; the strategist, the designer, and the developer. 
         </p>  
         <p>  
           My favorites technologies are WordPress, Laravel, and its JS cousin Adonis; Gatsby; React and Vue (both do the same but I love them).
