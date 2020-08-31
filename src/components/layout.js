@@ -57,9 +57,9 @@ export default class Layout extends React.Component {
             <Link to="/contact/" onClick={() => this.setState({navbar:!this.state.navbar})} >
               Contact me!
             </Link>
-            <Link to="/" onClick={() => this.setState({navbar:!this.state.navbar})} >
+            <a href="/Samuel-rivera-c-resume.pdf" target="_blank"  onClick={() => this.setState({navbar:!this.state.navbar})} >
               Check my CV
-            </Link>
+            </a>
           </nav>
 
           <main className="col-12" >

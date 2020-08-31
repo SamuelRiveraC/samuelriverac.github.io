@@ -32,13 +32,19 @@ export default class Hero extends React.Component {
       <div className="col-12 col-md-6 px-1 px-lg-3 px-xl-5">
         <div className="hero__headline">
 
-          <h1 className="hero__title">
-            SAMUEL RIVERA C
-          </h1>
+          <img width="128" src="/SRC-Logo.png" alt="Samuel Rivera C Logo" />
 
-          <h2 className="hero__subtitle">
-            FULL STACK WEB DEVELOPER
+          <h2 className="hero__title">
+            I am Samuel Rivera 
           </h2>
+          <h3 className="hero__subtitle">
+            A Full Stack Web developer
+          </h3>
+          <p className="px-0 px-lg-5">
+            Currently creating bespoke websites that make a difference for small business and their digital marketing strategies.
+            <br />
+            I am also working as a remote web developer primarily with Wordpress, Node and React.
+          </p>
 
           <div className="row justify-content-center">  
             <Link className="btn btn--primary mx-3 mt-3" to="/contact" >

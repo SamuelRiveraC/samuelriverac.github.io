@@ -8,21 +8,21 @@ import Skills from "../../content/skills.json"
 export default class WhatIDo extends React.Component {
   render () { return (
     <div className="row align-items-center" >
+
+
+
+
 	    <div className="col-12 col-md-6" >
 	   		<div className="card" >
           <div className="row">
             <div className="col-12"> 
 	   		      <h4> Hard Skills </h4>
 	   		      <p>
-    		        I am a software developer specialized in web development, with a full stack experience in diverse and modern backend and frontend technologies, always backed up by the agile scrum and kanban project managing methodologies.
-    		      </p>
+                I am a Computer Systems Engineer specialized in web development, with full-stack experience in diverse and modern backend and frontend technologies, always backed up by the agile scrum and kanban project managing methodologies. Since I am a developer my favorites technologies are WordPress, Laravel, and its JS cousin Adonis; Gatsby, and React and Vue (these pairs do the same but I love both). 
+              </p>
     		      <p>
-    		        I am fueled by an obsessive passion to become better everyday and helping you, the small business or startup owner, to do the same. Creating and updating websites or web applications that solve real problems, benefiting your company in valuable ways.
-    		      </p>
-
-    		      <p>
-    		        Technologies i often use:
-    		      </p>
+                This is the full list of the technologies I have learned until now
+              </p>
             </div>
           </div>
           <div className="row"> 
@@ -33,7 +33,6 @@ export default class WhatIDo extends React.Component {
               return <div className="badge"> 
                 <img src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
               </div>
-
             })}
           </div>
           <br/>
@@ -58,11 +57,11 @@ export default class WhatIDo extends React.Component {
               </div>
             })}
           </div>
-
-
-
 	    	</div>
 	    </div>
+
+
+
 
 	    <div className="col-12 col-md-6" >
 	    	<div className="card" >
@@ -70,13 +69,10 @@ export default class WhatIDo extends React.Component {
             <div className="col-12"> 
 	    	      <h4> Soft Skills </h4>
     		      <p>
-    		        I am fueled by an obsessive passion to become better everyday and helping you, the small business or startup owner, to do the same. Creating and updating websites or web applications that solve real problems, benefiting your company in valuable ways.
-    		      </p>
-    		      <p>
-    		        I am always available for a challenge! contact me on the form below and i will email you soon!
-    		      </p>
+                I've been working remotely with small businesses around the US, Europe, and South America. Since I've always worked remotely, I had to learn how to manage my own time and projects, I also learned about digital marketing, branding, customer service, and how to sell myself. Before I even realized I was not only a software developer but a businessman; the strategist, the designer, and the developer. 
+              </p>
               <p>
-                Tools i often use:
+                This is a list of tools I often use in my workflow:
               </p>
             </div>
           </div>
@@ -96,6 +92,10 @@ export default class WhatIDo extends React.Component {
           <CV extraClasses="m-3"/>
 	    	</div>
 	    </div>
+
+
+
+
     </div>
   ) }
 }
