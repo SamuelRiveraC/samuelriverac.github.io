@@ -32,6 +32,8 @@ export default class Contact extends React.Component {
     	  responseTitle: '',
         responseMessage:'',
     	  responseIcon:'',
+
+        loading: false
       };
 
 	  this.handleChange = this.handleChange.bind(this);
@@ -52,6 +54,7 @@ export default class Contact extends React.Component {
 	}
   handleSubmit(event) {
     event.preventDefault();
+    this.setState ({ loading:true})
 
     axios.post(
       "https://formcarry.com/s/AyEbozFGC5B",  
@@ -66,15 +69,21 @@ export default class Contact extends React.Component {
     )
     .then((response) => {
       if(response.data.code === 200){
-      	this.setState ({ responseClass: response.data.status })
-      	this.setState ({ responseTitle: response.data.title })
-      	this.setState ({ responseMessage: response.data.message })
-        this.setState ({ responseIcon: "" })
+      	this.setState ({ 
+          responseClass: response.data.status,
+          responseTitle: response.data.title,
+          responseMessage: response.data.message,
+          responseIcon: "",
+          loading:false
+        })
       } else {
-      	this.setState ({ responseClass: "error" })
-      	this.setState ({ responseTitle: "Sorry!" })
-      	this.setState ({ responseMessage: "Something went wrong! But You did everything ok! Please try again" })
-        this.setState ({ responseIcon: "" })
+      	this.setState ({ 
+          responseClass: "error",
+          responseTitle: "Sorry!",
+          responseMessage: "Something went wrong! But You did everything ok! Please try again",
+          responseIcon: "",
+          loading:false
+       })
       }
     })
     .catch((error) => {
@@ -134,7 +143,7 @@ export default class Contact extends React.Component {
 
   				<div className="col-12 col-md-6">
   					<div className="input">
-					    <label for="message">About your business and your needs </label>
+					    <label for="message">About you and your project </label>
 					    <textarea name="message" className="form-control"  onChange={this.handleChange.bind(this, 'message')}></textarea>
 					    {(this.state.messageValid && !this.state.messageFirst) || (this.state.messageValid  === false && !this.state.messageFirst === false) ?
                  <br /> : <p className="error"> Please let me know about you! that's how I can help you :)  </p> }
@@ -143,9 +152,10 @@ export default class Contact extends React.Component {
 
           <div className="col-12 text-center">
             <div className="contact__button_wrap">
-				      <button type="submit" className="btn btn--cta" disabled={!this.state.namesValid || !this.state.emailValid || !this.state.messageValid}>
-				  	    Submit?
-				      </button>
+				      { !this.state.loading && <button type="submit" className="btn btn--primary" disabled={!this.state.namesValid || !this.state.emailValid || !this.state.messageValid}>
+				  	    Contact me! 
+				      </button> }
+              { this.state.loading &&  <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" /> }
             </div>
 			    </div>
   			</form>
