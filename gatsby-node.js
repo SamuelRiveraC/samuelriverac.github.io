@@ -1,3 +1,4 @@
+const fs = require('fs')
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -64,4 +65,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
+}
+
+
+
+//comment
+exports.onPostBuild = ({ store }) => {
+  const { directory } = store.getState().program
+  const indexHtmlPath = path.join(directory, 'public', 'index.html')
+
+  const indexHtml = fs.readFileSync(indexHtmlPath, {
+    encoding: 'utf8'
+  })
+
+  const comment = '<!-- Hi! Do you wanted to check my source code to see how it is programmed? I\'ll tell you first its gatsby.js, you can check the repository here https://github.com/SamuelRiveraC/samuelriverac.github.io. Thanks for Visiting my site!. Btw i\'m looking for a Remote job, chances are that if you are looking this is because of that, so thanks for considering me! --> '
+
+  fs.writeFileSync(indexHtmlPath, `${comment}${indexHtml}`)
 }
