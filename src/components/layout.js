@@ -22,8 +22,8 @@ export default class Layout extends React.Component {
     this.state = {
       navbar: false
     }
-
-    
+    console.log('Hi there, thanks for visiting! if you have any questions about any of my work reach out to me at samuelrivera64@gmail.com',
+                'if you would like to visit the repository of my portfolio check https://github.com/SamuelRiveraC/samuelriverac.github.io')
   }
 
   render () {
@@ -81,7 +81,7 @@ export default class Layout extends React.Component {
             
             <div className="row justify-content-center">
               {Social.map((data, index) => {
-                return  <a className="social_media" href={data.text==="Email" ? "mailto:"+data.link : data.link}>
+                return  <a className="social_media" key={index} href={data.text==="Email" ? "mailto:"+data.link : data.link}>
                   <FontAwesomeIcon icon={icons[data.text]} size="2x" /> 
                 </a>
               })}
