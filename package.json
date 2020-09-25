@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "samuel-rivera-c-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "My 4th personal portfolio made in GatsbyJs",
+  "version": "4.0",
+  "author": "Samuel Rivera <samuelrivera64@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
@@ -46,7 +46,8 @@
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "react"
   ],
   "license": "MIT",
   "scripts": {
@@ -57,7 +58,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d master"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
