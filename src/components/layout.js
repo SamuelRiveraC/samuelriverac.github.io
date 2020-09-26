@@ -11,31 +11,65 @@ import Img from "gatsby-image"
 import Social from "../../content/social.json"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faBars,faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faBars,faEnvelope, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faFacebook, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 const icons = {"Email" :faEnvelope,  "Facebook" :faFacebook,  "Instagram" :faInstagram,  "Linkedin" :faLinkedin,  "Github" :faGithub}
+
+
 
 export default class Layout extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      navbar: false
+      navbar: false,
+      darkmode: this.readCookie('darkmode') === null ? false : true,
     }
     console.log('Hi there, thanks for visiting! if you have any questions about any of my work reach out to me at samuelrivera64@gmail.com',
                 'if you would like to visit the repository of my portfolio check https://github.com/SamuelRiveraC/samuelriverac.github.io')
   }
 
+  darkmode() {
+    this.setState({darkmode:!this.state.darkmode})
+    let expirationDate = new Date()
+    expirationDate.setMonth(expirationDate.getMonth()+1)
+    this.createCookie('darkmode', this.darkmode, expirationDate.getTime())
+  }
+
+  createCookie (key, value, date) {
+    var cookie = escape(key) + "=" + escape(value) + ";expires=" + new Date(date).toUTCString() + ";";
+    document.cookie = cookie;
+  }
+  readCookie(name) {
+    var key = name + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i];
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1, cookie.length);
+      }
+      if (cookie.indexOf(key) === 0) {
+        return cookie.substring(key.length, cookie.length);
+      }
+    }
+    return null;
+  }
+
+
+
   render () {
     return (
-      <div className="container-fluid"> 
+      <div className={this.state.darkmode ? "container-fluid app darkmode" : "container-fluid app"}> 
         
         <div className="row">
           <div className="nav__open" onClick={() => this.setState({navbar:!this.state.navbar})}>
             <FontAwesomeIcon icon={faBars} size="2x" /> 
-            
           </div>
   
+          <div className="nav__toggle" onClick={() => this.darkmode() }>
+            {!this.state.darkmode && <FontAwesomeIcon icon={faMoon} size="2x" /> }
+            {this.state.darkmode && <FontAwesomeIcon icon={faSun} size="2x" /> }
+          </div>
+
           <nav className={!this.state.navbar && "open"} style={{width: this.state.navbar ? "100vw" : "0vw"}}>
             <div className="overlay"> </div>
 

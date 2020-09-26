@@ -12,10 +12,12 @@ The style is fully responsive and takes in account accessibility needs and color
 
 - Add more examples of work, Add youtube videos for each one be
 
-- Lighter and Colder gray on hero picture (ccdce0)
+- Update: Refactor to styled components
 
-- Big Update, Add dark theme toggle button
+- An even better 404 page
+
+- A fun easter egg
 
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/b utton.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
