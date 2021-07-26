@@ -21,9 +21,31 @@ const IndexPage = ({data}) => (
 
     <Fade bottom>
       <h2 className="section_title">
-        What I do          
+        What I do offer to you        
       </h2>
       <WhatIDo />
+    </Fade>
+
+    <Fade bottom>
+      <h2 className="section_title">
+        My experience
+      </h2>
+    </Fade>
+
+    <h2 className="section_title">
+      My Work        
+    </h2>
+
+    <Portfolio portfolios={data.allMarkdownRemark.edges}/>
+    
+    <Fade bottom>
+      <Testimonials />
+    </Fade>
+
+    <div className="separator" />
+    
+    <Fade bottom>
+      <WorkWithMe />
     </Fade>
 
     <div className="separator" />
