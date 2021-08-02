@@ -35,21 +35,16 @@ export default class Hero extends React.Component {
           <img width="128" src="/SRC-Logo.png" alt="Samuel Rivera C Logo" />
 
           <h2 className="hero__title">
-            I am Samuel Rivera 
+            Front End Engineer & Web developer
           </h2>
-          <h3 className="hero__subtitle">
-            A Full Stack Web developer
-          </h3>
           <p className="px-0 px-lg-5">
-            Currently creating bespoke websites that make a difference for small business and their digital marketing strategies.
-            <br />
-            I am also working as a remote web developer primarily with Wordpress, Node and React.
+            I’m Samuel Rivera, a Front end engineer and web developer with more than 3 years of experience developing purposeful, consistent and attractive interfaces for business, startups and tech companies to appeal to clients and maintain their interest
           </p>
 
           <div className="row justify-content-center">  
-            <Link className="btn btn--primary mx-3 mt-3" to="/contact" >
+            <div className="btn btn--primary mx-3 mt-3" >
               &nbsp;&nbsp;&nbsp;&nbsp; Contact me &nbsp;&nbsp;&nbsp;&nbsp;
-            </Link>
+            </div>
             <CV extraClasses="mx-3 mt-3"/>
           </div>
         </div>

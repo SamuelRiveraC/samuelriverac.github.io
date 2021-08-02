@@ -30,7 +30,7 @@ export default class WhatIDo extends React.Component {
           </div>
           <div className="row backend"> 
             {Skills.back.map((data, index) => {
-              return <div className="badge"> 
+              return <div className="badge" key={index}> 
                 <img src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
               </div>
             })}
@@ -41,7 +41,7 @@ export default class WhatIDo extends React.Component {
           </div>
           <div className="row front"> 
             {Skills.front.map((data, index) => {
-              return <div className="badge"> 
+              return <div className="badge" key={index}> 
                 <img src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
               </div>
             })}
@@ -52,7 +52,7 @@ export default class WhatIDo extends React.Component {
           </div>
           <div className="row db"> 
             {Skills.db.map((data, index) => {
-              return <div className="badge"> 
+              return <div className="badge" key={index}> 
                 <img src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
               </div>
             })}
@@ -78,7 +78,7 @@ export default class WhatIDo extends React.Component {
           </div>
           <div className="row tools"> 
             {Skills.tools.map((data, index) => {
-              return <div className="badge"> 
+              return <div className="badge" key={index}> 
                 <img src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
               </div>
             })}

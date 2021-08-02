@@ -14,27 +14,25 @@ $primary_dark: #791214;
   $tertiary_dark:  #cc4e00;
 
 //Darkest to lightest grayscale_
-$gs_i:   #F1F1F1; // $gs_i:   #121212;
-$gs_ii:  #F8F8F8; // $gs_ii:  #272727;
-$gs_iii: #FFFFFF; // $gs_iii: #353535;
+$gs_i:   #F1F1F1; 
+$gs_ii:  #F8F8F8; 
+$gs_iii: #FFFFFF; 
 
-$gs_iv:  #353535; // $gs_iv:  #EEEEEE;
-$gs_v:   #272727; // $gs_v:   #F1F1F1;
-$gs_vi:  #121212; // $gs_vi:  #FFFFFF;
+$gs_iv:  #353535; 
+$gs_v:   #272727; 
+$gs_vi:  #121212; 
+
+// darkmode
+
+
+
 
 * {
 	font-family: "Montserrat";
 } h1,h2,h3,h4,h5,h6 {
 	font-family: "Exo 2";
 	font-weight: 900;
-	color:$gs_vi;
 }
-
-
-
-
-
-
 
 
 ////////////////////////////////////////////////////////////////
@@ -79,8 +77,6 @@ $gs_vi:  #121212; // $gs_vi:  #FFFFFF;
 
 //Set Style
 html,body {
-	background: $gs_i;
-	color: $gs_iv;
 	min-height: 100vh;
 	font-size: 16px;
 	overflow-x: hidden;
@@ -91,7 +87,19 @@ html,body {
 		font-size: 24px;
 	}
 
- }
+}
+
+.app {
+	background: $gs_i;
+	color: $gs_iv;
+	h1,h2,h3,h4,h5,h6 {
+		color:$gs_vi;
+	}
+}
+
+
+
+
 
 
 .logo {
@@ -117,7 +125,7 @@ html,body {
 	border:1px solid rgba(0,0,0,0);
 
 	@include nav_buttons;
-	
+
 	background: $gs_iii;
 	@include shadow_iii;
 	
@@ -125,6 +133,23 @@ html,body {
 		background: $gs_iv;
 		color: $gs_iii;
 	}
+}
+.nav__toggle {
+	position: fixed;
+	z-index: 5;
+	border:1px solid rgba(0,0,0,0);
+
+	@include nav_buttons;
+	
+	margin: 1.6em 7.2em;
+	
+	background: $gs_iii;
+	@include shadow_iii;
+	
+	&:hover {
+		background: $gs_iv;
+		color: $gs_iii;
+	}	
 }
 nav{ 
 	overflow: hidden;
@@ -617,6 +642,7 @@ textarea { min-height: 10.8em; }
 	border:none;
 	border-radius: 0;
 	transition: all 0.25s linear;
+	color: $gs_iii;
 
 	&:before, &:after {
 		content: "";
@@ -794,7 +820,191 @@ textarea { min-height: 10.8em; }
 			display: none;
 		}
 	}
-
-
 }
 
+
+//Refactor Candidate
+.darkmode {
+	$gs_i:   #121212;
+	$gs_ii:  #272727;
+	$gs_iii: #353535;
+	$gs_iv:  #EEEEEE;
+	$gs_v:   #F1F1F1;
+	$gs_vi:  #FFFFFF;
+
+
+	&.app {
+		background: $gs_i;
+		color: $gs_iv;
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		color:$gs_vi;
+	}
+
+	.card {
+		background-color: $gs_ii;
+		color:$gs_v;
+	}
+
+	footer {
+		background: $gs_i;
+		img{
+			filter: invert(1);
+		}
+  	}
+
+	a {
+		color: $gs_vi;
+		&:hover{
+			background: $gs_i;
+		}
+	}
+
+	.divider_container {
+		.divider {
+			&.lower {
+				&::before {
+					border-color: transparent transparent $gs_i transparent;
+				}
+				&::after {
+					border-color: transparent transparent $gs_i transparent;
+				}
+			}
+		}
+	}
+	
+
+	
+	.btn {
+		border: 1px solid $gs_ii;
+		background: $gs_ii;
+		color: $gs_iv ;
+		&:hover{
+			background: $gs_iii;
+			color: $gs_iv ;
+		}
+		&:active{
+			background: $gs_i;
+			border: 1px solid $gs_iii;
+		}
+		&:disabled{
+			background: transparent;
+			border: 1px solid $gs_ii;
+			color: $gs_ii;
+		}
+		&.btn--primary{
+			background: $primary;
+			border: 1px solid $primary;
+		}
+		&.btn--primary:hover{
+			background: $primary_light;
+			border: 1px solid $primary_light;
+		}
+		&.btn--primary:active{
+			background: $primary_dark;
+			border: 1px solid $primary_dark;
+		}
+
+		&.btn--secondary{
+			background: $secondary_dark;
+			border: 1px solid $secondary_dark;
+		}
+		&.btn--secondary:hover{
+			background: $secondary;
+			@include shadow_iii;
+		}
+		&.btn--secondary:active{
+			background: $secondary_dark;
+			border: 1px solid $secondary_dark;
+			box-shadow:none;
+		}
+
+		&.btn--tertiary{
+			background: $tertiary_dark;
+			border: 1px solid $tertiary_dark;
+		}
+		&.btn--tertiary:hover{
+			background: $tertiary;
+			@include shadow_iii;
+		}
+		&.btn--tertiary:active{
+			background: $tertiary_dark;
+			border: 1px solid $tertiary_dark;
+			box-shadow:none;
+		}
+
+		&.btn--light{
+			background: $gs_ii;
+			color: $gs_v;
+			border: 1px solid $gs_ii;
+		}
+		&.btn--light:hover{
+			background: $gs_iii;
+			border: 1px solid $gs_iii;
+			@include shadow_v;
+		}
+		&.btn--light:active{
+			background: $gs_i;
+			color:$gs_v;
+			border: 1px solid $gs_i;
+			box-shadow:none;
+		}
+
+		&.btn--transparent {
+			background: none;
+			border: 1px solid $gs_vi;
+			box-shadow:inset 0 0 0px 2px white,0 5px 15px rgba(0,0,0,.25);
+
+		}&.btn--transparent:hover{
+			border: 1px solid $gs_vi;
+			box-shadow:inset 0 0 0px 2px $gs_vi,0 10px 25px rgba(0,0,0,.25);
+		}&.btn--transparent:active{
+			background: $gs_iv;
+			color:$gs_iii;
+			box-shadow:inset 0 0 0px 2px $gs_iv;
+		}
+	}
+	.carousel {
+		.slide { 
+			background: $gs_iii !important;
+		} .card {
+			background: $gs_iii !important;
+		} 
+	}	
+
+	.aboutme {
+		background: $gs_iii;
+	}
+
+	.nav__toggle, .nav__open, {
+		color: $gs_ii;
+		&:hover {
+			color: $gs_v;
+		}
+	}
+	.nav__close {
+		border: 1px solid $gs_v !important;
+		&:hover {
+			color: $gs_v;
+			border: 1px solid $primary !important;
+		}
+	}
+	nav { 
+		background: linear-gradient(45deg,$gs_i,gs_ii);
+		background: linear-gradient(135deg,
+			        rgba(255, 255, 255, 0.25),
+			        rgba(127, 127, 127, 0.75)),
+		            $gs_i;
+		.overlay {
+			border-color: transparent transparent $primary transparent;
+		}
+	}
+	.hero__headline{
+		color: $gs_i;
+		h1,h2,h3,h4,h5,h6 {
+			color: $gs_i;
+		}
+	}
+
+}
