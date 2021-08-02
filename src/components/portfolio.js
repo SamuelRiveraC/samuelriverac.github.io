@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-export default function Portfolio {
+export default function Portfolio (){
   return (
     <div className="row portfolio" >
         {this.props.portfolios.map((item,index) => {
