@@ -10,7 +10,7 @@ import Hero from "../components/hero"
 import Portfolio from "../components/portfolio"
 import WorkWithMe from "../components/workwithme"
 import WhatIDo from "../components/whatido"
-
+import Testimonials from "../components/testimonials"
 
 
 const IndexPage = ({data}) => (
@@ -36,7 +36,7 @@ const IndexPage = ({data}) => (
       My Work        
     </h2>
 
-    <Portfolio portfolios={data.allMarkdownRemark.edges}/>
+    <Portfolio portfolios={data.portfolios.edges}/>
     
     <Fade bottom>
       <Testimonials />
