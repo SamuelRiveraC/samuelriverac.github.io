@@ -41,11 +41,9 @@
 		{"skill":"Trello","color":"0079BF","logo":"trello"},
 		{"skill":"Photoshop","color":"26C9FF","logo":"adobe%20photoshop"},
 		{"skill":"Figma","color":"F24E1E","logo":"figma"},
-		{"skill":"Vultr","color":"007BFC","logo":"vultr"},
 		{"skill":"Insomnia","color":"5849BE","logo":"insomnia"},
 		{"skill":"Telegram","color":"2CA5E0","logo":"telegram"},
 		{"skill":"Slack","color":"4A154B","logo":"slack"},
 		{"skill":"Discord","color":"7289DA","logo":"discord"}
-
 	]
 }
