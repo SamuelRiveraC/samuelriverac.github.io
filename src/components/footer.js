@@ -14,10 +14,7 @@ export default function Footer {
     	    	<h2 className="section_title">Contact Me</h2>
     	    	<p>I always love a new challenge, let’s work together, contact me and I will answer you as soon as possible!</p>
     	    	<Contact/>
-    	    	<p>I always love a new challenge, let’s work together, contact me and I will answer you as soon as possible!</p>
-    	    	<p>
-    	    		You can also email me at <a href="mailto:samuerivera64@gmail.com"> samuerivera64@gmail.com </a> and connect with me on <a href="https://www.linkedin.com/in/samuelriverac/"> LinkedIn </a>
-    	    	</p>
+    	    	<p>You can also email me at <a href="mailto:samuerivera64@gmail.com"> samuerivera64@gmail.com </a> and connect with me on <a href="https://www.linkedin.com/in/samuelriverac/"> LinkedIn </a></p>
     	    </div>
     	</div>
     )
