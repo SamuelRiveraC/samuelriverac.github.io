@@ -6,31 +6,27 @@ import SEO from "../components/seo"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
-	
     <div className="separator" />
-	<div className="container">  	
-		<div className="row">  	
-			<div className="col-12 text-center">  	
-    			<h1>404 NOT FOUND</h1> 
-    			<br />
-    			<h3>These aren't the links you are looking for.</h3>
-    			<br />
-    			<p>Lucky for you I have some links that you may be interested on :)</p>
-				<br />
-            	<Link className="mb-3" to="/" >
-            	  Return to my landing page website
-            	</Link><br /><br />
-            	<Link className="mb-3" to="/portfolio/">
-            	  Look my Work and how my experience can help you
-            	</Link><br /><br />
-            	<Link className="mb-3" to="/Samuel-rivera-c-resume.pdf">
-            	  Or... maybe are you looking for my CV, here it is for you
-            	</Link><br /><br />
+			<div className="row">  	
+				<div className="col-12 text-center">  	
+  					<h1>404 NOT FOUND</h1> 
+  					<br />
+  					<h3>These aren't the links you are looking for.</h3>
+  					<br />
+  					<p>Lucky for you I have some links that you may be interested on :)</p>
+						<br />
+  		      <Link className="mb-3" to="/" >
+  		        Return to my landing page website
+  		      </Link><br /><br />
+  		      <Link className="mb-3" to="/portfolio/">
+  		        Look my Work and how my experience can help you
+  		      </Link><br /><br />
+  		      <Link className="mb-3" to="/Samuel-rivera-c-resume.pdf">
+  		        Or... maybe are you looking for my CV, here it is for you
+  		      </Link><br /><br />
+				</div>  	
 			</div>  	
-		</div>  	
-	</div>  	
-    <div className="separator" />
+    <div className="separatr" />
   </Layout>
 )
 
