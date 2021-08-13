@@ -19,16 +19,10 @@ const NotFoundPage = () => (
     			<p>Lucky for you I have some links that you may be interested on :)</p>
 				<br />
             	<Link className="mb-3" to="/" >
-            	  The Homepage of my website
+            	  Return to my landing page website
             	</Link><br /><br />
             	<Link className="mb-3" to="/portfolio/">
             	  Look my Work and how my experience can help you
-            	</Link><br /><br />
-            	<Link className="mb-3" to="/about/">
-            	  About me, my personality and what people thinks about me
-            	</Link><br /><br />
-            	<Link className="mb-3" to="/contact/">
-            	  Hey! you may need help or want me to answer some questions, just Contact me here!
             	</Link><br /><br />
             	<Link className="mb-3" to="/Samuel-rivera-c-resume.pdf">
             	  Or... maybe are you looking for my CV, here it is for you

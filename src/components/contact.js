@@ -18,17 +18,17 @@ export default class Contact extends React.Component {
 
         //this package
       	namesValid: false,
-    	emailValid: false,
-    	messageValid: false,
+    		emailValid: false,
+    		messageValid: false,
 
         namesFirst: true,
         emailFirst: true,
         messageFirst: true,
   
-    	responseClass: 'none',
-    	responseTitle: '',
+    		responseClass: 'none',
+    		responseTitle: '',
         responseMessage:'',
-    	responseIcon:'',
+    		responseIcon:'',
       };
 
 	  this.handleChange = this.handleChange.bind(this);
@@ -91,8 +91,6 @@ export default class Contact extends React.Component {
 
 	render () {
 		return (
-  		<div>
-
 			<form onSubmit={this.handleSubmit} className="row">
 				<div className="col-12 col-md-6">
 					<div className="input">
@@ -109,7 +107,6 @@ export default class Contact extends React.Component {
 			       		<br /> : <p className="error"> Please enter your email in this format: yourname@example.com </p>}
 					</div>
 				</div>
-
 				<div className="col-12">
 					<div className="input">
 					    <label for="message">About your business and your needs </label>
@@ -118,7 +115,6 @@ export default class Contact extends React.Component {
 			     		<br /> : <p className="error"> Please let me know about you! that's how I can help you :)  </p> }
 					</div>
 				</div>
-
 				<div className="col-12 text-center">
 				 	<div className="contact__button_wrap">
 						<button type="submit" className="btn btn--cta" disabled={!this.state.namesValid || !this.state.emailValid || !this.state.messageValid}>
@@ -126,10 +122,6 @@ export default class Contact extends React.Component {
 						</button>
 				 	</div>
 				</div>
-			</form>
-
-
-			<div className="row">
 				<div className="col-12 text-center">
 					<div className={'alert alert--'+this.state.responseClass}>
 						<p className="title">{this.state.responseTitle} </p>
@@ -142,8 +134,7 @@ export default class Contact extends React.Component {
 						</div>
 					</div>
 				</div>
-			</div>
-  		</ div>
-  		)
-  	}
+			</form>
+ 		)
+ 	}
 }

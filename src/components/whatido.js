@@ -8,20 +8,13 @@ import Skills from "../../content/skills.json"
 export default class WhatIDo extends React.Component {
   render () { return (
     <div className="row align-items-center" >
-
-
-
-
 	    <div className="col-12 col-md-6" >
 	   		<div className="card" >
           <div className="row">
             <div className="col-12"> 
-	   		      <h4> Hard Skills </h4>
+	   		      <h3> Hard Skills </h3>
 	   		      <p>
-                I am a Computer Systems Engineer specialized in web development, with full-stack experience in diverse and modern backend and frontend technologies, always backed up by the agile scrum and kanban project managing methodologies. Since I am a developer my favorites technologies are WordPress, Laravel, and its JS cousin Adonis; Gatsby, and React and Vue (these pairs do the same but I love both). 
-              </p>
-    		      <p>
-                This is the full list of the technologies I have learned until now
+                I am a Computer Systems Engineer specialized in front-end web development with experience in diverse and modern backend and frontend technologies. This is the full list of the technologies I have learned for now:
               </p>
             </div>
           </div>
@@ -60,16 +53,13 @@ export default class WhatIDo extends React.Component {
 	    	</div>
 	    </div>
 
-
-
-
 	    <div className="col-12 col-md-6" >
 	    	<div className="card" >
           <div className="row"> 
             <div className="col-12"> 
-	    	      <h4> Soft Skills </h4>
+	    	      <h3> Soft Skills </h3>
     		      <p>
-                I've been working remotely with small businesses around the US, Europe, and South America. Since I've always worked remotely, I had to learn how to manage my own time and projects, I also learned about digital marketing, branding, customer service, and how to sell myself. Before I even realized I was not only a software developer but a businessman; the strategist, the designer, and the developer. 
+                I’ve been working remotely with small businesses around the US, Europe, and South America. Since I’ve mostly worked remotely, I had to learn how to manage my own time and projects, I also learned about digital marketing, branding, customer service, and how to sell myself, which I leverage in my development process to guarantee that the application delivers not only the functionalities but appeals the users as well. This is a list of tools I often use in my workflow:
               </p>
               <p>
                 This is a list of tools I often use in my workflow:
@@ -93,30 +83,6 @@ export default class WhatIDo extends React.Component {
 	    	</div>
 	    </div>
 
-
-
-
     </div>
   ) }
 }
-/*
-
-          <Img className="hero__background" fluid={data.file.childImageSharp.fluid} />
-export const query = graphql`
-  query images {
-    allFile(filter: { relativePath: { regex: "/techstacks/.*.png/" } } ) 
-    {
-      edges {
-        node {
-          relativePath
-          name
-          childImageSharp {
-            fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    } 
-  }
-`;*/

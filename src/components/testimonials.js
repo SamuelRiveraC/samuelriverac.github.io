@@ -11,7 +11,6 @@ export default class Testimonials extends React.Component {
       <h3 className="section_title">   Testimonials   </h3>
       
       <Carousel className="col-12 col-md-8 testimonial__carousel">
-
         {TestimonialsJSON.map((data, index) => {
           return  <div className="card p-5 text-center">
             <p> <img src={data.image} alt="testimonial" width="32 px"/> </p>
@@ -23,10 +22,7 @@ export default class Testimonials extends React.Component {
             <p> {data.author} <br/>  <small>{data.position}</small> </p> 
           </div>
         })}
-    
       </Carousel>
-  
-
     </div>
   ) }
 }
