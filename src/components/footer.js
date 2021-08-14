@@ -2,7 +2,7 @@ import React from "react"
 import Contact from "../components/contact"
 import CV from "../components/cv"
 
-export default function Footer {
+export default function Footer (){
 	return (
 		<div className="row">
     	    <div className="col-12 col-md-6">

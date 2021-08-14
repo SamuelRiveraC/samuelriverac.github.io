@@ -1,6 +1,4 @@
 import React from "react"
-import { graphql } from 'gatsby'
-
 import Fade from 'react-reveal/Fade';
 
 import Layout from "../components/layout"
@@ -9,8 +7,7 @@ import SEO from "../components/seo"
 import Hero from "../components/Hero"
 import WhatIDo from "../components/WhatIDo"
 import Experience from "../components/Experience"
-import Portfolio from "../components/Portfolio"
-import WorkWithMe from "../components/WorkWithMe"
+import Portfolios from "../components/Portfolios"
 import Footer from "../components/Footer"
 
 
@@ -30,11 +27,7 @@ const IndexPage = ({data}) => (
     </Fade>
 
     <Fade bottom>
-      <Portfolio />
-    </Fade>
-
-    <Fade bottom>
-      <WorkWithMe />
+      <Portfolios/>
     </Fade>
 
     <Fade bottom>

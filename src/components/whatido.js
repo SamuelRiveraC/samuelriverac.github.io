@@ -24,7 +24,7 @@ export default class WhatIDo extends React.Component {
           <div className="row backend"> 
             {Skills.back.map((data, index) => {
               return <div className="badge" key={index}> 
-                <img src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
+                <img alt="" src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
               </div>
             })}
           </div>
@@ -35,7 +35,7 @@ export default class WhatIDo extends React.Component {
           <div className="row front"> 
             {Skills.front.map((data, index) => {
               return <div className="badge" key={index}> 
-                <img src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
+                <img alt="" src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
               </div>
             })}
           </div>
@@ -46,7 +46,7 @@ export default class WhatIDo extends React.Component {
           <div className="row db"> 
             {Skills.db.map((data, index) => {
               return <div className="badge" key={index}> 
-                <img src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
+                <img alt="" src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
               </div>
             })}
           </div>
@@ -69,7 +69,7 @@ export default class WhatIDo extends React.Component {
           <div className="row tools"> 
             {Skills.tools.map((data, index) => {
               return <div className="badge" key={index}> 
-                <img src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
+                <img alt="" src={"https://img.shields.io/badge/-"+data.skill+"-"+data.color+"?style=flat-square&logo="+data.logo+"&logoColor=white"} />
               </div>
             })}
           </div>

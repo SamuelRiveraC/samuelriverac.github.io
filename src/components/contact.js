@@ -1,7 +1,4 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'

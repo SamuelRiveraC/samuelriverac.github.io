@@ -1,0 +1,56 @@
+buttons.scss
+
+.btn {
+	cursor: pointer;
+	background:none;
+    font-weight: bold;
+	min-width: 100px;
+	text-align: center;
+	border: 1px solid $light_2;
+	background: $light_2;
+
+	outline: none;
+	padding:1em 2em;
+	margin: 0 0.125em;
+	color: $dark_1 ;
+
+	border-radius:0;
+
+	@include shadow_1;
+	@include transition_general;
+
+
+	&:hover{
+		background: $light_3;
+		color: $dark_1 ;
+		@include shadow_2;
+	}
+	&:active{
+		background: $light_1;
+		border: 1px solid $light_3;
+		box-shadow: none;
+	}
+	&:disabled{
+		background: transparent;
+		border: 1px solid $light_2;
+		box-shadow: none;
+		color: $light_2;
+	}
+
+	&.btn--primary{
+		background: $primary;
+		color: $light_2;
+		border: 1px solid $primary;
+	}
+	&.btn--primary:hover{
+		background: $primary_hover;
+		color: $light_1;
+		border: 1px solid $primary_hover;
+		@include shadow_2;
+	}
+	&.btn--primary:active{
+		background: $primary_focus;
+		border: 1px solid $primary_focus;
+		box-shadow:none;
+	}
+}

@@ -1,60 +1,8 @@
-// CTA
-$primary_light:#db292f; 
-$primary:      #b12025; 
-$primary_dark: #791214;
 
-// These will only appear in the contact form as a way to differentiate them, though if i make a white template...
-  // Success
-  $secondary_light:#35bbe9; 
-  $secondary: #35bbe9; 
-  $secondary_dark: #0B82FB;
-  // Error
-  $tertiary_light: #FF6400; 
-  $tertiary:  #FF6400; 
-  $tertiary_dark:  #cc4e00;
+@import "variables";
+@import "layout";
+@import "buttons";
 
-//Darkest to lightest grayscale_
-$gs_i:   #F1F1F1; 
-$gs_ii:  #F8F8F8; 
-$gs_iii: #FFFFFF; 
-
-$gs_iv:  #353535; 
-$gs_v:   #272727; 
-$gs_vi:  #121212; 
-
-// darkmode
-
-* {
-	font-family: "Montserrat";
-} h1,h2,h3,h4,h5,h6 {
-	font-family: "Exo 2";
-	font-weight: 900;
-}
-
-
-////////////////////////////////////////////////////////////////
-
-
-//Mixins
-@mixin shadow_i {
-	box-shadow: 0 5px 5px rgba(0,0,0,.075);
-}
-@mixin shadow_ii {
-	box-shadow: 0 5px 10px rgba(0,0,0,.125);
-}
-@mixin shadow_iii {
-	box-shadow: 0 5px 15px rgba(0,0,0,.25);
-}
-@mixin shadow_iv {
-	box-shadow: 0 5px 20px rgba(0,0,0,.25);
-}
-@mixin shadow_v {
-	box-shadow: 0 10px 25px rgba(0,0,0,.25);
-}
-
-@mixin transition_general {
-	transition: 0.1s all;
-}
 
 @mixin nav_buttons {
 	cursor: pointer;
@@ -72,27 +20,7 @@ $gs_vi:  #121212;
 
 
 
-//Set Style
-html,body {
-	min-height: 100vh;
-	font-size: 16px;
-	overflow-x: hidden;
-	position:relative;
-}
-@media screen and (min-width: 2560px) {
-	html,body {
-		font-size: 24px;
-	}
 
-}
-
-.app {
-	background: $gs_i;
-	color: $gs_iv;
-	h1,h2,h3,h4,h5,h6 {
-		color:$gs_vi;
-	}
-}
 
 
 
@@ -109,10 +37,10 @@ html,body {
 	cursor: pointer;
 
 	@include transition_general;
-	@include shadow_i;
+	@include shadow_1;
 
 	&:hover {
-		@include shadow_iii;
+		@include shadow_2;
 	}
 }
 
@@ -123,12 +51,12 @@ html,body {
 
 	@include nav_buttons;
 
-	background: $gs_iii;
-	@include shadow_iii;
+	background: $light_3;
+	@include shadow_2;
 	
 	&:hover {
-		background: $gs_iv;
-		color: $gs_iii;
+		background: $dark_1;
+		color: $light_3;
 	}
 }
 .nav__toggle {
@@ -140,12 +68,12 @@ html,body {
 	
 	margin: 1.6em 7.2em;
 	
-	background: $gs_iii;
-	@include shadow_iii;
+	background: $light_3;
+	@include shadow_2;
 	
 	&:hover {
-		background: $gs_iv;
-		color: $gs_iii;
+		background: $dark_1;
+		color: $light_3;
 	}	
 }
 nav{ 
@@ -160,11 +88,11 @@ nav{
     background-position: bottom;
     */
 
-    background: linear-gradient(45deg,$gs_i,gs_iii);
+    background: linear-gradient(45deg,$light_1,light_3);
 	background: linear-gradient(135deg,
 		        rgba(255, 255, 255, 0.75),
 		        rgba(127, 127, 127, 0.25)),
-	            $gs_i;
+	            $light_1;
 	
 	.overlay {
 		background: none;
@@ -183,7 +111,7 @@ nav{
 
 
 	transition: 0.5s all;
-	@include shadow_i;
+	@include shadow_1;
 	
 	a {
 		width: 100vw;
@@ -195,12 +123,12 @@ nav{
 
 		display: flex;
 		text-decoration: none;
-		color: $gs_vi;
+		color: $dark_3;
 		@include transition_general;
 
 		&:hover{
-			color: $primary_light;
-			background: $gs_i;
+			color: $primary_hover;
+			background: $light_1;
 		}
 	}
 
@@ -214,12 +142,12 @@ nav{
 			
 			@include nav_buttons;
 
-			border:1px solid $gs_iv;
+			border:1px solid $dark_1;
 			
 			&:hover {
-				color: $gs_ii;
-				border:1px solid $primary_light;
-				background: $primary_light;
+				color: $light_2;
+				border:1px solid $primary_hover;
+				background: $primary_hover;
 			}
 		}
 	}
@@ -228,7 +156,7 @@ nav{
 }
 
 footer {
-	background: $gs_i;
+	background: $light_1;
 	width: 100%;
 	text-align: center;
 	margin-top: 1em;
@@ -241,134 +169,15 @@ a {
 	text-decoration: none;
 	color:$primary ;
 	&:hover{
-		color: $gs_iv ;
+		color: $dark_1 ;
 		text-decoration: none;
 	}
 }
 
-.btn {
-	cursor: pointer;
-	background:none;
-    font-weight: bold;
-	min-width: 100px;
-	text-align: center;
-	border: 1px solid $gs_ii;
-	background: $gs_ii;
-	
 
-	outline: none;
-	padding:1em 2em;
-	margin: 0 0.125em;
-	color: $gs_iv ;
-
-	border-radius:0;
-
-	@include shadow_i;
-	@include transition_general;
-
-
-	&:hover{
-		background: $gs_iii;
-		color: $gs_iv ;
-		@include shadow_iii;
-	}
-	&:active{
-		background: $gs_i;
-		border: 1px solid $gs_iii;
-		box-shadow: none;
-	}
-	&:disabled{
-		background: transparent;
-		border: 1px solid $gs_ii;
-		box-shadow: none;
-		color: $gs_ii;
-	}
-
-	&.btn--primary{
-		background: $primary;
-		color: $gs_ii;
-		border: 1px solid $primary;
-	}
-	&.btn--primary:hover{
-		background: $primary_light;
-		color: $gs_i;
-		border: 1px solid $primary_light;
-		@include shadow_iii;
-	}
-	&.btn--primary:active{
-		background: $primary_dark;
-		border: 1px solid $primary_dark;
-		box-shadow:none;
-	}
-
-	&.btn--secondary{
-		background: $secondary_dark;
-		color: $gs_ii;
-		border: 1px solid $secondary_dark;
-	}
-	&.btn--secondary:hover{
-		background: $secondary;
-		color: $gs_i;
-		@include shadow_iii;
-	}
-	&.btn--secondary:active{
-		background: $secondary_dark;
-		border: 1px solid $secondary_dark;
-		box-shadow:none;
-	}
-
-	&.btn--tertiary{
-		background: $tertiary_dark;
-		color: $gs_ii;
-		border: 1px solid $tertiary_dark;
-	}
-	&.btn--tertiary:hover{
-		background: $tertiary;
-		color: $gs_i;
-		@include shadow_iii;
-	}
-	&.btn--tertiary:active{
-		background: $tertiary_dark;
-		border: 1px solid $tertiary_dark;
-		box-shadow:none;
-	}
-
-	&.btn--light{
-		background: $gs_ii;
-		color: $gs_v;
-		border: 1px solid $gs_ii;
-	}
-	&.btn--light:hover{
-		background: $gs_iii;
-		border: 1px solid $gs_iii;
-		@include shadow_v;
-	}
-	&.btn--light:active{
-		background: $gs_i;
-		color:$gs_v;
-		border: 1px solid $gs_i;
-		box-shadow:none;
-	}
-
-	&.btn--transparent {
-		background: none;
-		color: $gs_iii;
-		border: 1px solid $gs_iii;
-		box-shadow:inset 0 0 0px 2px white,0 5px 15px rgba(0,0,0,.25);
-
-	}&.btn--transparent:hover{
-		border: 1px solid $gs_iii;
-		box-shadow:inset 0 0 0px 2px white,0 10px 25px rgba(0,0,0,.25);
-	}&.btn--transparent:active{
-		background: $gs_i;
-		color:$gs_iv;
-		box-shadow:inset 0 0 0px 2px white;
-	}
-
-}
 
 .hero {
-	@include shadow_iii;
+	@include shadow_2;
 
 	& {
 		min-height: 100vh;
@@ -412,7 +221,7 @@ a {
 	}
 	.hero__headline {
 		text-align: center;
-		color: $gs_vi;
+		color: $dark_3;
 		font-weight:bolder;
 		.hero__title {
 			font-size: 3.2em;
@@ -436,7 +245,7 @@ a {
       height: 0;
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
-      border-top: 25px solid $gs_ii;
+      border-top: 25px solid $light_2;
 	}
 	
 }
@@ -451,8 +260,8 @@ a {
 
 
 .aboutme{
-	background: $gs_iii;
-	@include shadow_iii;
+	background: $light_3;
+	@include shadow_2;
 	img {
 		z-index:2;
 	}
@@ -499,7 +308,7 @@ a {
 	.badge {
 		overflow:hidden;
 		border-radius: 5px;
-		@include shadow_i;
+		@include shadow_1;
 	}
 }
 
@@ -512,10 +321,10 @@ a {
 	//background: linear-gradient(45deg ,$primary-light,$primary-dark);
 
 
-	color:$gs_iii;
+	color:$light_3;
 	min-height: 20vh;
 	h1,h2,h3,h4,h5,h6 {
-		color:$gs_iii;
+		color:$light_3;
 	}
 }
 
@@ -533,7 +342,7 @@ portfolio__link
 		position:relative;
 		margin-bottom: 4em;
 
-		@include shadow_iii;
+		@include shadow_2;
 
 
 		.portfolio__preview {
@@ -548,15 +357,15 @@ portfolio__link
 				transform: scale(1.1);
 			}
 			.portfolio__link {
-				background: $gs_iv;
-				@include shadow_v; 
+				background: $dark_1;
+				@include shadow_3; 
 			}
 		}
 
 		&:active {
 			.portfolio__link {
-				background: $gs_vi;
-				@include shadow_iii;
+				background: $dark_3;
+				@include shadow_2;
 			}
 			
 		}
@@ -568,17 +377,17 @@ portfolio__link
 			left: 50%;
 			transform: translateX(-50%);
 		
-			background: $gs_v; 
+			background: $dark_2; 
 			padding: 1em 1em;
 
 			min-width: 240px;
 			z-index: 2;
 
 			font-weight: bold;
-			color: $gs_i;
+			color: $light_1;
 
 			@include transition_general;
-			@include shadow_iii;
+			@include shadow_2;
 		}
 	}
 
@@ -593,13 +402,13 @@ portfolio__link
 .card {
 	min-height:10em;
 	border:none;
-	background-color: $gs_ii;
-	color:$gs_v;
+	background-color: $light_2;
+	color:$dark_2;
 	margin-bottom: 1em;
 	border-radius: 0;
 	padding: 1em 2em;
 	margin: 2em 1em;
-	@include shadow_i;
+	@include shadow_1;
 }
 
 .input {
@@ -607,23 +416,23 @@ portfolio__link
 		margin: 2em 0 1em;
 	}
 	.error {
-		color: $primary_light;
+		color: $primary_hover;
 	}
 }
 
 .form-control {
-	border: 2px solid $gs_iv !important;
+	border: 2px solid $dark_1 !important;
 	border-radius:0px;
 	outline: none;
 
 	background: none;
-	color:$gs_iv;
+	color:$dark_1;
 
 	&:active,&:focus {
-		border: 2px solid $gs_vi !important;
-		box-shadow: 0 0 0px 2px $gs_vi !important;
+		border: 2px solid $dark_3 !important;
+		box-shadow: 0 0 0px 2px $dark_3 !important;
 		background: none;
-		color: $gs_vi;
+		color: $dark_3;
 
 	}
 
@@ -639,7 +448,7 @@ textarea { min-height: 10.8em; }
 	border:none;
 	border-radius: 0;
 	transition: all 0.25s linear;
-	color: $gs_iii;
+	color: $light_3;
 
 	&:before, &:after {
 		content: "";
@@ -650,20 +459,20 @@ textarea { min-height: 10.8em; }
 		left:0;
 	}
 	&:before {
-    	border-left: 50em solid $gs_i;
+    	border-left: 50em solid $light_1;
 		border-top: 5em solid transparent;
 	}
 	&:after {
-	    border-right: 50em solid $gs_i;
+	    border-right: 50em solid $light_1;
 		border-top: 5em solid transparent;
 	}
 
 	&.alert--success {
-		background: $secondary;
+		background: $primary;
 		opacity: 1;
 	}
 	&.alert--error {
-		background: $tertiary;
+		background: $primary;
 		opacity: 1;
 	}
 	&.alert--none {
@@ -674,19 +483,19 @@ textarea { min-height: 10.8em; }
 
 .carousel {
 	img {
-		@include shadow_i;
+		@include shadow_1;
 		border-radius: 50%;
 		width: 64px !important;
 	}
 	&.carousel-slider {
-		@include shadow_i;
+		@include shadow_1;
 	} .slide { 
 		border-radius:5px;
-		background: $gs_iii !important;
+		background: $light_3 !important;
 	} .card {
 		margin:0;
 		box-shadow: none;
-		background: $gs_iii !important;
+		background: $light_3 !important;
 	} 
 
 	.control-dots {
@@ -708,7 +517,7 @@ textarea { min-height: 10.8em; }
 
 .social_media {
 	margin: 2em 1em 0 1em;
-	color:$gs_iv;
+	color:$dark_1;
 	&:hover {
 		color:$primary;
 	}
@@ -736,11 +545,11 @@ textarea { min-height: 10.8em; }
 			}
 			&::before {
 				border-width: 0 50vw 5em 50vw;
-				border-color: transparent transparent $gs_i transparent;
+				border-color: transparent transparent $light_1 transparent;
 			}
 			&::after {
 				border-width: 0 50vw 5em 50vw;
-				border-color: transparent transparent $gs_i transparent;
+				border-color: transparent transparent $light_1 transparent;
 			}
 		}
 	}
@@ -822,39 +631,39 @@ textarea { min-height: 10.8em; }
 
 //Refactor Candidate
 .darkmode {
-	$gs_i:   #121212;
-	$gs_ii:  #272727;
-	$gs_iii: #353535;
-	$gs_iv:  #EEEEEE;
-	$gs_v:   #F1F1F1;
-	$gs_vi:  #FFFFFF;
+	$light_1:   #121212;
+	$light_2:  #272727;
+	$light_3: #353535;
+	$dark_1:  #EEEEEE;
+	$dark_2:   #F1F1F1;
+	$dark_3:  #FFFFFF;
 
 
 	&.app {
-		background: $gs_i;
-		color: $gs_iv;
+		background: $light_1;
+		color: $dark_1;
 	}
 
 	h1,h2,h3,h4,h5,h6 {
-		color:$gs_vi;
+		color:$dark_3;
 	}
 
 	.card {
-		background-color: $gs_ii;
-		color:$gs_v;
+		background-color: $light_2;
+		color:$dark_2;
 	}
 
 	footer {
-		background: $gs_i;
+		background: $light_1;
 		img{
 			filter: invert(1);
 		}
   	}
 
 	a {
-		color: $gs_vi;
+		color: $dark_3;
 		&:hover{
-			background: $gs_i;
+			background: $light_1;
 		}
 	}
 
@@ -862,10 +671,10 @@ textarea { min-height: 10.8em; }
 		.divider {
 			&.lower {
 				&::before {
-					border-color: transparent transparent $gs_i transparent;
+					border-color: transparent transparent $light_1 transparent;
 				}
 				&::after {
-					border-color: transparent transparent $gs_i transparent;
+					border-color: transparent transparent $light_1 transparent;
 				}
 			}
 		}
@@ -874,133 +683,133 @@ textarea { min-height: 10.8em; }
 
 	
 	.btn {
-		border: 1px solid $gs_ii;
-		background: $gs_ii;
-		color: $gs_iv ;
+		border: 1px solid $light_2;
+		background: $light_2;
+		color: $dark_1 ;
 		&:hover{
-			background: $gs_iii;
-			color: $gs_iv ;
+			background: $light_3;
+			color: $dark_1 ;
 		}
 		&:active{
-			background: $gs_i;
-			border: 1px solid $gs_iii;
+			background: $light_1;
+			border: 1px solid $light_3;
 		}
 		&:disabled{
 			background: transparent;
-			border: 1px solid $gs_ii;
-			color: $gs_ii;
+			border: 1px solid $light_2;
+			color: $light_2;
 		}
 		&.btn--primary{
 			background: $primary;
 			border: 1px solid $primary;
 		}
 		&.btn--primary:hover{
-			background: $primary_light;
-			border: 1px solid $primary_light;
+			background: $primary_hover;
+			border: 1px solid $primary_hover;
 		}
 		&.btn--primary:active{
-			background: $primary_dark;
-			border: 1px solid $primary_dark;
+			background: $primary_focus;
+			border: 1px solid $primary_focus;
 		}
 
-		&.btn--secondary{
-			background: $secondary_dark;
-			border: 1px solid $secondary_dark;
+		&.btn--primary{
+			background: $primary_focus;
+			border: 1px solid $primary_focus;
 		}
-		&.btn--secondary:hover{
-			background: $secondary;
-			@include shadow_iii;
+		&.btn--primary:hover{
+			background: $primary;
+			@include shadow_2;
 		}
-		&.btn--secondary:active{
-			background: $secondary_dark;
-			border: 1px solid $secondary_dark;
+		&.btn--primary:active{
+			background: $primary_focus;
+			border: 1px solid $primary_focus;
 			box-shadow:none;
 		}
 
-		&.btn--tertiary{
-			background: $tertiary_dark;
-			border: 1px solid $tertiary_dark;
+		&.btn--primary{
+			background: $primary_focus;
+			border: 1px solid $primary_focus;
 		}
-		&.btn--tertiary:hover{
-			background: $tertiary;
-			@include shadow_iii;
+		&.btn--primary:hover{
+			background: $primary;
+			@include shadow_2;
 		}
-		&.btn--tertiary:active{
-			background: $tertiary_dark;
-			border: 1px solid $tertiary_dark;
+		&.btn--primary:active{
+			background: $primary_focus;
+			border: 1px solid $primary_focus;
 			box-shadow:none;
 		}
 
 		&.btn--light{
-			background: $gs_ii;
-			color: $gs_v;
-			border: 1px solid $gs_ii;
+			background: $light_2;
+			color: $dark_2;
+			border: 1px solid $light_2;
 		}
 		&.btn--light:hover{
-			background: $gs_iii;
-			border: 1px solid $gs_iii;
-			@include shadow_v;
+			background: $light_3;
+			border: 1px solid $light_3;
+			@include shadow_3;
 		}
 		&.btn--light:active{
-			background: $gs_i;
-			color:$gs_v;
-			border: 1px solid $gs_i;
+			background: $light_1;
+			color:$dark_2;
+			border: 1px solid $light_1;
 			box-shadow:none;
 		}
 
 		&.btn--transparent {
 			background: none;
-			border: 1px solid $gs_vi;
+			border: 1px solid $dark_3;
 			box-shadow:inset 0 0 0px 2px white,0 5px 15px rgba(0,0,0,.25);
 
 		}&.btn--transparent:hover{
-			border: 1px solid $gs_vi;
-			box-shadow:inset 0 0 0px 2px $gs_vi,0 10px 25px rgba(0,0,0,.25);
+			border: 1px solid $dark_3;
+			box-shadow:inset 0 0 0px 2px $dark_3,0 10px 25px rgba(0,0,0,.25);
 		}&.btn--transparent:active{
-			background: $gs_iv;
-			color:$gs_iii;
-			box-shadow:inset 0 0 0px 2px $gs_iv;
+			background: $dark_1;
+			color:$light_3;
+			box-shadow:inset 0 0 0px 2px $dark_1;
 		}
 	}
 	.carousel {
 		.slide { 
-			background: $gs_iii !important;
+			background: $light_3 !important;
 		} .card {
-			background: $gs_iii !important;
+			background: $light_3 !important;
 		} 
 	}	
 
 	.aboutme {
-		background: $gs_iii;
+		background: $light_3;
 	}
 
 	.nav__toggle, .nav__open, {
-		color: $gs_ii;
+		color: $light_2;
 		&:hover {
-			color: $gs_v;
+			color: $dark_2;
 		}
 	}
 	.nav__close {
-		border: 1px solid $gs_v !important;
+		border: 1px solid $dark_2 !important;
 		&:hover {
-			color: $gs_v;
+			color: $dark_2;
 			border: 1px solid $primary !important;
 		}
 	}
 	nav { 
-		background: linear-gradient(45deg,$gs_i,gs_ii);
+		background: linear-gradient(45deg,$light_1,light_2);
 		background: linear-gradient(135deg,
 			        rgba(255, 255, 255, 0.25),
 			        rgba(127, 127, 127, 0.75)),
-		            $gs_i;
+		            $light_1;
 		.overlay {
 			border-color: transparent transparent $primary transparent;
 		}
 	}
 	.hero__headline{
-		color: $gs_i;
+		color: $light_1;
 		h1,h2,h3,h4,h5,h6 {
-			color: $gs_i;
+			color: $light_1;
 		}
 	}
 

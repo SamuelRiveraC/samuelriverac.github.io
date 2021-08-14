@@ -1,0 +1,21 @@
+html,body {
+	min-height: 100vh;
+	font-size: 16px;
+	overflow-x: hidden;
+	position:relative;
+}
+@media screen and (min-width: 2560px) {
+	html,body {
+		font-size: 24px;
+	}
+
+}
+
+.app {
+	background: $light_1;
+	color: $dark_1;
+
+	h1,h2,h3,h4,h5,h6, p, span {
+		color:$dark_3;
+	}
+}
