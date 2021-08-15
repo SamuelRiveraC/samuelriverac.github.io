@@ -1,0 +1,42 @@
+.carousel {
+	img {
+		@include shadow_1;
+		border-radius: 50%;
+		width: 64px !important;
+	}
+	&.carousel-slider {
+		@include shadow_1;
+	} .slide { 
+		border-radius:5px;
+		background: $light_3 !important;
+	} .card {
+		margin:0;
+		box-shadow: none;
+		background: $light_3 !important;
+	} 
+
+	.control-dots {
+		.dot {
+			border:1px solid rgba(0,0,0,0.5);
+			width: 12px !important;
+			height: 12px !important;
+			box-shadow:none !important;
+			&.selected {
+			
+			}
+		}
+	}
+}
+.carousel-status {
+	display: none;
+}
+
+.darkmode {
+	.carousel {
+		.slide { 
+			background: $light_3 !important;
+		} .card {
+			background: $light_3 !important;
+		} 
+	}	
+}

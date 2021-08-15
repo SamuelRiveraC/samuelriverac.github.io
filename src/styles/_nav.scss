@@ -1,0 +1,72 @@
+@mixin nav_buttons {
+	cursor: pointer;
+	margin: 1.6em 3.2em;
+	width: 3em;	height: 3em;
+	border-radius: 50%;
+	@include transition_general;
+	svg {
+		position: absolute;
+		top:50%;left: 50%;
+		transform:translate(-50%,-50%);
+	}
+}
+
+.nav__open {
+	position: fixed;
+	z-index: 5;
+	border:1px solid rgba(0,0,0,0);
+
+	@include nav_buttons;
+
+	background: $light_3;
+	@include shadow_2;
+	
+	&:hover {
+		background: $dark_1;
+		color: $light_3;
+	}
+}
+.nav__toggle {
+	position: fixed;
+	z-index: 5;
+	border:1px solid rgba(0,0,0,0);
+
+	@include nav_buttons;
+	
+	margin: 1.6em 7.2em;
+	
+	background: $light_3;
+	@include shadow_2;
+	
+	&:hover {
+		background: $dark_1;
+		color: $light_3;
+	}	
+}
+
+
+.darkmode {
+	.nav__toggle, .nav__open, {
+		color: $light_2;
+		&:hover {
+			color: $dark_2;
+		}
+	}
+	.nav__close {
+		border: 1px solid $dark_2 !important;
+		&:hover {
+			color: $dark_2;
+			border: 1px solid $primary !important;
+		}
+	}
+	nav { 
+		background: linear-gradient(45deg,$light_1,light_2);
+		background: linear-gradient(135deg,
+			        rgba(255, 255, 255, 0.25),
+			        rgba(127, 127, 127, 0.75)),
+		            $light_1;
+		.overlay {
+			border-color: transparent transparent $primary transparent;
+		}
+	}
+}

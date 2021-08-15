@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
     super(props);
     this.state = {
       navbar: false,
-      darkmode: this.readCookie('darkmode') === null ? false : true,
+      darkmode: localStorage.getItem('darkmode') && false;
     }
     // Easter Egg 1
     console.log(
@@ -24,33 +24,10 @@ export default class Layout extends React.Component {
       'If you would like to visit the repository of my portfolio check https://github.com/SamuelRiveraC/samuelriverac.github.io'
     )
   }
-
   darkmode() {
     this.setState({darkmode:!this.state.darkmode})
-    let expirationDate = new Date()
-    expirationDate.setMonth(expirationDate.getMonth()+1)
-    this.createCookie('darkmode', this.darkmode, expirationDate.getTime())
+    localStorage.getItem('darkmode', this.darkmode);
   }
-
-  createCookie (key, value, date) {
-    var cookie = escape(key) + "=" + escape(value) + ";expires=" + new Date(date).toUTCString() + ";";
-    document.cookie = cookie;
-  }
-  readCookie(name) {
-    var key = name + "=";
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i];
-      while (cookie.charAt(0) === ' ') {
-        cookie = cookie.substring(1, cookie.length);
-      }
-      if (cookie.indexOf(key) === 0) {
-        return cookie.substring(key.length, cookie.length);
-      }
-    }
-    return null;
-  }
-
 
 
   render () {

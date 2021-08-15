@@ -1,6 +1,3 @@
-
-
-
 html,body {
 	min-height: 100vh;
 	font-size: 16px;
@@ -17,5 +14,45 @@ html,body {
 		color:$primary;
 		font-family: "Exo 2";
 		font-weight: 900;
+	}
+}
+
+a {
+	text-decoration: none;
+	color:$primary ;
+	&:hover{
+		color: $dark_1 ;
+		text-decoration: none;
+	}
+}
+
+.card {
+	min-height:10em;
+	border:none;
+	background-color: $light_2;
+	color:$dark_2;
+	margin-bottom: 1em;
+	border-radius: 0;
+	padding: 1em 2em;
+	margin: 2em 1em;
+	@include shadow_1;
+}
+
+.darkmode {
+	&.app {
+		background: $light_1;
+		color: $dark_1;
+	}
+
+	.card {
+		background-color: $light_3;
+		color:$dark_2;
+	}
+
+	a {
+		color: $dark_3;
+		&:hover{
+			background: $light_1;
+		}
 	}
 }

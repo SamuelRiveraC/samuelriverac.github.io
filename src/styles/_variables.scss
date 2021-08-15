@@ -22,3 +22,14 @@ $dark_3:  #353535;
 @mixin transition_general {
 	transition: 0.1s all;
 }
+
+
+.darkmode {
+	$light_1: #121212;
+	$light_2: #272727;
+	$light_3: #353535;
+
+	$dark_1:  #EEEEEE;
+	$dark_2:  #F1F1F1;
+	$dark_3:  #FFFFFF;
+}
