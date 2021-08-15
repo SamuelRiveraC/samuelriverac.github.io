@@ -1,12 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
 import CV from "../components/cv"
+import CTA from "../components/cta"
 import Skills from "../../content/skills.json"
 
                
 
 export default class WhatIDo extends React.Component {
   render () { return (
+  <div className="container" >
     <div className="row align-items-center" >
 	    <div className="col-12 col-md-6" >
 	   		<div className="card" >
@@ -76,13 +78,12 @@ export default class WhatIDo extends React.Component {
         </div>
 
 	    	<div className="w100 text-center">
-          <Link className="btn btn--primary m-3" to="/about" >
-            Know more about me
-          </Link>
-          <CV extraClasses="m-3"/>
+          <CTA />
+          <CV  />
 	    	</div>
 	    </div>
 
     </div>
+  </div>
   ) }
 }

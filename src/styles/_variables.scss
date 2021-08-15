@@ -10,7 +10,6 @@ $dark_1:  #121212;
 $dark_2:  #272727; 
 $dark_3:  #353535; 
 
-
 @mixin shadow_1 {
 	box-shadow: 0 5px 5px rgba(0,0,0,.075);
 }
@@ -20,7 +19,6 @@ $dark_3:  #353535;
 @mixin shadow_3 {
 	box-shadow: 0 10px 25px rgba(0,0,0,.25);
 }
-
 @mixin transition_general {
 	transition: 0.1s all;
 }

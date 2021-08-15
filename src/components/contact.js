@@ -12,6 +12,7 @@ export default class Contact extends React.Component {
       	names: '',
       	email: '',
       	message: '',
+      	company: '',
 
         //this package
       	namesValid: false,
@@ -22,10 +23,9 @@ export default class Contact extends React.Component {
         emailFirst: true,
         messageFirst: true,
   
-    		responseClass: 'none',
-    		responseTitle: '',
-        responseMessage:'',
-    		responseIcon:'',
+    	responseClass: 'none',
+    	responseTitle: '',
+		responseMessage:'',
       };
 
 	  this.handleChange = this.handleChange.bind(this);
@@ -51,6 +51,7 @@ export default class Contact extends React.Component {
 	    {
 	      names: this.state.names,
 	      email: this.state.email,
+	      company: this.state.company,
 	      message: this.state.message,
 	      location: this.props.location,
 	      origin: this.props.origin
@@ -62,12 +63,10 @@ export default class Contact extends React.Component {
 	    	this.setState ({ responseClass: response.data.status })
 	    	this.setState ({ responseTitle: response.data.title })
 	    	this.setState ({ responseMessage: response.data.message })
-	      this.setState ({ responseIcon: "" })
 	    } else {
 	    	this.setState ({ responseClass: "error" })
 	    	this.setState ({ responseTitle: "Sorry!" })
 	    	this.setState ({ responseMessage: "Something went wrong! But You did everything ok! Please try again" })
-	      this.setState ({ responseIcon: "" })
 	    }
 	  })
 	  .catch((error) => {
@@ -78,56 +77,66 @@ export default class Contact extends React.Component {
 	  setTimeout(() => {
 	  	this.setState ({ responseClass: "none" })
 	  }, 10000);
-
 	  setTimeout(() => {
 	    this.setState ({ responseTitle: "" })
 	    this.setState ({ responseMessage: "" })
-	    this.setState ({ responseIcon: "" })
 	  }, 11000);
 	}
 
 	render () {
 		return (
 			<form onSubmit={this.handleSubmit} className="row">
-				<div className="col-12 col-md-6">
+				<div className="col-12 col-md-4">
 					<div className="input">
-						<label for="name" >Your name</label>
-					    <input type="text" for="name" className="form-control" value={this.state.names} onChange={this.handleChange.bind(this, 'names')} />
+					    <input type="text" for="name" placeholder="Your names" className="form-control" value={this.state.names} onChange={this.handleChange.bind(this, 'names')} />
 					    {(this.state.namesValid && !this.state.namesFirst) || (this.state.namesValid  === false && !this.state.namesFirst === false )  ?
 			       		<br /> : <p className="error">  Please enter your names  </p> }
 					</div>
-				<div className="col-12 col-md-6">
+				</div>
+				<div className="col-12 col-md-4">
 					<div className="input">
-					    <label for="email" >Your Email</label>
-					    <input name="email" type="email"  className="form-control" onChange={this.handleChange.bind(this, 'email')} />
+					    <input name="email" type="email"  placeholder="Your Email" className="form-control" onChange={this.handleChange.bind(this, 'email')} />
 					    {(this.state.emailValid  && !this.state.emailFirst) || (this.state.emailValid  === false && !this.state.emailFirst === false) ?
 			       		<br /> : <p className="error"> Please enter your email in this format: yourname@example.com </p>}
 					</div>
 				</div>
+
+				<div className="col-12 col-md-4">
+					<div className="input">
+					    <input name="company" type="text"  placeholder="Company" className="form-control" onChange={this.handleChange.bind(this, 'company')} />
+						<br /> 
+					</div>
+				</div>
 				<div className="col-12">
 					<div className="input">
-					    <label for="message">About your business and your needs </label>
-					    <textarea name="message" className="form-control"  onChange={this.handleChange.bind(this, 'message')}></textarea>
+					    <textarea name="message" className="form-control" placeholder="Your message" onChange={this.handleChange.bind(this, 'message')}></textarea>
 					    {(this.state.messageValid && !this.state.messageFirst) || (this.state.messageValid  === false && !this.state.messageFirst === false) ?
 			     		<br /> : <p className="error"> Please let me know about you! that's how I can help you :)  </p> }
 					</div>
 				</div>
 				<div className="col-12 text-center">
 				 	<div className="contact__button_wrap">
-						<button type="submit" className="btn btn--cta" disabled={!this.state.namesValid || !this.state.emailValid || !this.state.messageValid}>
-							Submit?
+						<button type="submit" className="primary" 
+							disabled={!this.state.namesValid || !this.state.emailValid || !this.state.messageValid}>
+							Schedule a chat
 						</button>
 				 	</div>
 				</div>
-				<div className="col-12 text-center">
-					<div className={'alert alert--'+this.state.responseClass}>
-						<p className="title">{this.state.responseTitle} </p>
-						<p>{this.state.responseMessage} </p>
+
+				<div className="col-12">
+					<div className={this.state.responseClass != "none" ? 'alert row '+this.state.responseClass : 'alert row'}>   
+						<div className='col-2 text-center'>
 						{ this.state.responseClass !== "none" && 
-							<p><FontAwesomeIcon icon={this.state.responseClass === 'error' ?
+							<FontAwesomeIcon icon={this.state.responseClass === 'error' ?
 								faExclamationTriangle : faCheckCircle}
-							size="2x" /></p>
+							size="3x" />
 			    		}
+						</div>
+						<div className='col-10'>
+							<span>
+								{this.state.responseTitle} <br/>
+								{this.state.responseMessage}
+							</span>
 						</div>
 					</div>
 				</div>

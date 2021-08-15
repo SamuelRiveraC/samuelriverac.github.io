@@ -2,6 +2,8 @@
 @import "variables";
 @import "layout";
 @import "buttons";
+@import "form";
+@import "alerts";
 
 
 @mixin nav_buttons {
@@ -411,74 +413,8 @@ portfolio__link
 	@include shadow_1;
 }
 
-.input {
-	label {
-		margin: 2em 0 1em;
-	}
-	.error {
-		color: $primary_hover;
-	}
-}
 
-.form-control {
-	border: 2px solid $dark_1 !important;
-	border-radius:0px;
-	outline: none;
 
-	background: none;
-	color:$dark_1;
-
-	&:active,&:focus {
-		border: 2px solid $dark_3 !important;
-		box-shadow: 0 0 0px 2px $dark_3 !important;
-		background: none;
-		color: $dark_3;
-
-	}
-
-}
-textarea { min-height: 10.8em; }
-
-.alert  {
-	text-align: center;
-	padding: 1em 2em 75px;
-	margin-bottom:2em;
-	position: relative;
-	height: auto;
-	border:none;
-	border-radius: 0;
-	transition: all 0.25s linear;
-	color: $light_3;
-
-	&:before, &:after {
-		content: "";
-		position: absolute;
-    	display: block;
-		width: 100%;
-		bottom:0;
-		left:0;
-	}
-	&:before {
-    	border-left: 50em solid $light_1;
-		border-top: 5em solid transparent;
-	}
-	&:after {
-	    border-right: 50em solid $light_1;
-		border-top: 5em solid transparent;
-	}
-
-	&.alert--success {
-		background: $primary;
-		opacity: 1;
-	}
-	&.alert--error {
-		background: $primary;
-		opacity: 1;
-	}
-	&.alert--none {
-		opacity: 0;
-	}
-}
 
 
 .carousel {
@@ -649,7 +585,7 @@ textarea { min-height: 10.8em; }
 	}
 
 	.card {
-		background-color: $light_2;
+		background-color: $light_3;
 		color:$dark_2;
 	}
 
@@ -682,95 +618,7 @@ textarea { min-height: 10.8em; }
 	
 
 	
-	.btn {
-		border: 1px solid $light_2;
-		background: $light_2;
-		color: $dark_1 ;
-		&:hover{
-			background: $light_3;
-			color: $dark_1 ;
-		}
-		&:active{
-			background: $light_1;
-			border: 1px solid $light_3;
-		}
-		&:disabled{
-			background: transparent;
-			border: 1px solid $light_2;
-			color: $light_2;
-		}
-		&.btn--primary{
-			background: $primary;
-			border: 1px solid $primary;
-		}
-		&.btn--primary:hover{
-			background: $primary_hover;
-			border: 1px solid $primary_hover;
-		}
-		&.btn--primary:active{
-			background: $primary_focus;
-			border: 1px solid $primary_focus;
-		}
-
-		&.btn--primary{
-			background: $primary_focus;
-			border: 1px solid $primary_focus;
-		}
-		&.btn--primary:hover{
-			background: $primary;
-			@include shadow_2;
-		}
-		&.btn--primary:active{
-			background: $primary_focus;
-			border: 1px solid $primary_focus;
-			box-shadow:none;
-		}
-
-		&.btn--primary{
-			background: $primary_focus;
-			border: 1px solid $primary_focus;
-		}
-		&.btn--primary:hover{
-			background: $primary;
-			@include shadow_2;
-		}
-		&.btn--primary:active{
-			background: $primary_focus;
-			border: 1px solid $primary_focus;
-			box-shadow:none;
-		}
-
-		&.btn--light{
-			background: $light_2;
-			color: $dark_2;
-			border: 1px solid $light_2;
-		}
-		&.btn--light:hover{
-			background: $light_3;
-			border: 1px solid $light_3;
-			@include shadow_3;
-		}
-		&.btn--light:active{
-			background: $light_1;
-			color:$dark_2;
-			border: 1px solid $light_1;
-			box-shadow:none;
-		}
-
-		&.btn--transparent {
-			background: none;
-			border: 1px solid $dark_3;
-			box-shadow:inset 0 0 0px 2px white,0 5px 15px rgba(0,0,0,.25);
-
-		}&.btn--transparent:hover{
-			border: 1px solid $dark_3;
-			box-shadow:inset 0 0 0px 2px $dark_3,0 10px 25px rgba(0,0,0,.25);
-		}&.btn--transparent:active{
-			background: $dark_1;
-			color:$light_3;
-			box-shadow:inset 0 0 0px 2px $dark_1;
-		}
-	}
+	
 	.carousel {
 		.slide { 
 			background: $light_3 !important;

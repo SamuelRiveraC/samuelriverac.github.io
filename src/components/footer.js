@@ -4,6 +4,7 @@ import CV from "../components/cv"
 
 export default function Footer (){
 	return (
+    <div className="container">
 		<div className="row">
     	    <div className="col-12 col-md-6">
     	    	<h2 className="section_title">About Me</h2>
@@ -16,6 +17,7 @@ export default function Footer (){
     	    	<Contact/>
     	    	<p>You can also email me at <a href="mailto:samuerivera64@gmail.com"> samuerivera64@gmail.com </a> and connect with me on <a href="https://www.linkedin.com/in/samuelriverac/"> LinkedIn </a></p>
     	    </div>
-    	</div>
+        </div>
+    </div>
     )
 }

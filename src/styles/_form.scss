@@ -1,0 +1,22 @@
+.input {
+	.error {
+		color: $primary_hover;
+	}
+}
+
+.form-control {
+	border-radius:0px;
+	outline: none;
+
+	border: 1px solid #ddd;
+	background: #ddd;
+
+	&:active,&:focus {
+		border: 1px solid #ddd;
+		box-shadow:none;
+		background: #ddd;
+		color: $dark_3;
+	}
+
+}
+textarea { min-height: 10.8em; }

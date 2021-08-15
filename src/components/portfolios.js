@@ -40,13 +40,34 @@ const usePortfolios = () => {
 
 
 const Portfolios = () => {
-  // const data = { portfolios: { edges:[] } }
-  const data = usePortfolios()
+  const data = { portfolios: { edges:[] } }
+  // const data = usePortfolios()
   return (
+<div className="container" >
     <div className="row portfolio" >
       <div className="col-12" >
         <h3 className="section_title">   Portfolio   </h3>
       </div>
+
+      <div className="col-12 col-md-6">
+        <Link className="portfolio__item" to="#">
+          <div className="portfolio__preview">
+            <div className="portfolio__img__container">
+              <img src="/static/1c2cd7856efc2d8f127493c443bc5251/0d026/orinoco-0.jpg"/>
+            </div>
+          </div>
+        </Link>
+      </div>
+      <div className="col-12 col-md-6">
+        <Link className="portfolio__item" to="#">
+          <div className="portfolio__preview">
+            <div className="portfolio__img__container">
+              <img src="/static/4c3c61cc19ef2c6cb170a86360a09859/dd5bb/Livinglondonway.png" />
+            </div>
+          </div>
+        </Link>
+      </div>
+
       {data.portfolios.edges.map((item,index) => {
         return <div key={index} className="col-12 col-md-6">
           <Link key={index} className="portfolio__item" to={`/portfolio/${item.node.fields.slug}/`}>
@@ -62,6 +83,7 @@ const Portfolios = () => {
         </div>
         })}
     </div>
+  </div>
   )
 }
 

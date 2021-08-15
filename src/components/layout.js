@@ -55,50 +55,40 @@ export default class Layout extends React.Component {
 
   render () {
     return (
-      <div className={this.state.darkmode ? "container-fluid app darkmode" : "container-fluid app"}> 
-        <div className="row">
+      <div className={this.state.darkmode ? "app darkmode" : "app"}> 
 
-          <div className="nav__toggle" onClick={() => this.darkmode() }>
-            {!this.state.darkmode && <FontAwesomeIcon icon={faMoon} size="2x" /> }
-            { this.state.darkmode && <FontAwesomeIcon icon={faSun } size="2x" /> }
-          </div>
-
-
-
-
-
-          <main className="col-12" >
-              {this.props.children}
-          </main>
-
-
-
-
-
-          <footer className="col-12">
-            <div className="row">
-              <div className="col-4">
-                <StaticQuery
-                  query={graphql` query { file(relativePath: { eq: "SRC-Logo.png" }) { childImageSharp { fluid(maxWidth: 128) { ...GatsbyImageSharpFluid } } } } `}
-                  render={data => ( <Img width="32px" fluid={data.file.childImageSharp.fluid} /> )}
-                />
-              </div>
-
-              <div className="col-4">
-                {Social.map((data, index) => {
-                  return  <a className="social_media" key={index} href={data.text==="Email" ? "mailto:"+data.link : data.link}>
-                    <FontAwesomeIcon icon={icons[data.text]} size="2x" /> 
-                  </a>
-                })}
-              </div>
-
-              <div className="col-4">
-                © {new Date().getFullYear()} SamuelRiveraC.com All Rights reserved.
-              </div>
-            </div>
-          </footer>
-
+        <div className="nav__toggle" onClick={() => this.darkmode() }>
+          {!this.state.darkmode && <FontAwesomeIcon icon={faMoon} size="2x" /> }
+          { this.state.darkmode && <FontAwesomeIcon icon={faSun } size="2x" /> }
         </div>
+
+
+
+
+        {this.props.children}
+
+
+
+
+        <footer className="container-fluid">
+          <div className="row">
+            <div className="col-12 col-md-4">
+            </div>
+
+            <div className="col-12 col-sm-6 col-md-4">
+              {Social.map((data, index) => {
+                return  <a className="social_media" key={index} href={data.text==="Email" ? "mailto:"+data.link : data.link}>
+                  <FontAwesomeIcon icon={icons[data.text]} size="2x" /> 
+                </a>
+              })}
+            </div>
+
+            <div className="col-12 col-sm-6 col-md-4">
+              © {new Date().getFullYear()} SamuelRiveraC.com All Rights reserved.
+            </div>
+          </div>
+        </footer>
+
       </div>
     )
   }

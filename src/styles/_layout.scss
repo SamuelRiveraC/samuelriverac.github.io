@@ -1,21 +1,21 @@
+
+
+
 html,body {
 	min-height: 100vh;
 	font-size: 16px;
 	overflow-x: hidden;
 	position:relative;
 }
-@media screen and (min-width: 2560px) {
-	html,body {
-		font-size: 24px;
-	}
-
-}
-
 .app {
 	background: $light_1;
 	color: $dark_1;
+	
+	font-family: "Montserrat";
 
-	h1,h2,h3,h4,h5,h6, p, span {
-		color:$dark_3;
+	h1,h2,h3,h4,h5,h6 {
+		color:$primary;
+		font-family: "Exo 2";
+		font-weight: 900;
 	}
 }
