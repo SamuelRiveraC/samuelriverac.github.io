@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
     super(props);
     this.state = {
       navbar: false,
-      darkmode: localStorage.getItem('darkmode') && false;
+      darkmode: localStorage.getItem('darkmode') === "true" ? true : false
     }
     // Easter Egg 1
     console.log(
@@ -25,8 +25,9 @@ export default class Layout extends React.Component {
     )
   }
   darkmode() {
-    this.setState({darkmode:!this.state.darkmode})
-    localStorage.getItem('darkmode', this.darkmode);
+    this.setState({darkmode: !this.state.darkmode})
+
+    localStorage.setItem('darkmode', !this.state.darkmode);
   }
 
 
@@ -39,13 +40,7 @@ export default class Layout extends React.Component {
           { this.state.darkmode && <FontAwesomeIcon icon={faSun } size="2x" /> }
         </div>
 
-
-
-
         {this.props.children}
-
-
-
 
         <footer className="container-fluid">
           <div className="row">

@@ -124,7 +124,7 @@ export default class Contact extends React.Component {
 				</div>
 
 				<div className="col-12">
-					<div className={this.state.responseClass != "none" ? 'alert row '+this.state.responseClass : 'alert row'}>   
+					<div className={this.state.responseClass !== "none" ? 'alert row '+this.state.responseClass : 'alert row'}>   
 						<div className='col-2 text-center'>
 						{ this.state.responseClass !== "none" && 
 							<FontAwesomeIcon icon={this.state.responseClass === 'error' ?

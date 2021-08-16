@@ -15,7 +15,7 @@ const PortfolioPostTemplate = ({ data, pageContext, location }) => {
         <div className="row justify-content-center">
 
           <div className="col-12">
-            <h1 className="my-5">
+            <h1 className="my-5 text-center">
               {post.frontmatter.title}
             </h1>
           </div>

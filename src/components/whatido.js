@@ -10,6 +10,9 @@ export default class WhatIDo extends React.Component {
   render () { return (
   <div className="container" >
     <div className="row align-items-center" >
+      <div className="col-12 text-center" >
+        <h2> What i can offer to you </h2>
+      </div>
 	    <div className="col-12 col-md-6" >
 	   		<div className="card" >
           <div className="row">

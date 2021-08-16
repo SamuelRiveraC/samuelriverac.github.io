@@ -18,3 +18,12 @@
 textarea {
 	min-height: 12rem;
 }
+
+.darkmode {
+	.form-control {
+		border: 1px solid $dark_3;
+		background: $dark_3;
+		color: $light_1;
+	}
+
+}

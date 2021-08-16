@@ -5,12 +5,11 @@ import Layout from "../components/layout"
 const NotFoundPage = () => (
   <Layout>
     <div className="container" />
-			<div className="row">  	
+			<div className="row align-items-center" style={{height:"100vh"}}>  	
 				<div className="col-12 text-center">  	
   					<h1>404 NOT FOUND</h1> 
   					<br />
   					<h3>These aren't the links you are looking for.</h3>
-  					<br />
   					<p>Lucky for you I have some links that you may be interested on :)</p>
 						<br />
   		      <Link className="mb-3" to="/" >

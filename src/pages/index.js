@@ -16,18 +16,22 @@ const IndexPage = ({data}) => (
 
     <Fade bottom>
       <Hero />
+      <hr className="separator"/>
     </Fade>
 
     <Fade bottom>
       <WhatIDo />
+      <div className="separator"/>
     </Fade>
 
     <Fade bottom>
       <Experience/>
+      <div className="separator"/>
     </Fade>
 
     <Fade bottom>
       <Portfolios/>
+      <div className="separator"/>
     </Fade>
 
     <Fade bottom>

@@ -46,7 +46,7 @@ const Portfolios = () => {
 <div className="container" >
     <div className="row portfolio" >
       <div className="col-12" >
-        <h3 >   Portfolio   </h3>
+        <h2>   Portfolio   </h2>
       </div>
 
       <div className="col-12 col-md-4">

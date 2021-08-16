@@ -7,6 +7,8 @@
 @import "footer";
 @import "portfolio";
 @import "carousel";
+@import "hero";
+@import "experiences";
 
 .badge {
 	margin: 0.5em 0.75em;
@@ -20,6 +22,6 @@
 		@include shadow_1;
 	}
 }
-.experience_circle {
-	
+.separator {
+	min-height:4rem;
 }
