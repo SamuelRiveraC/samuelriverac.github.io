@@ -8,6 +8,7 @@ import Hero from "../components/Hero"
 import WhatIDo from "../components/WhatIDo"
 import Experience from "../components/Experience"
 import Portfolios from "../components/Portfolios"
+import Testimonials from "../components/Testimonials"
 import Footer from "../components/Footer"
 
 
@@ -31,6 +32,11 @@ const IndexPage = ({data}) => (
 
     <Fade bottom>
       <Portfolios/>
+      <div className="separator"/>
+    </Fade>
+
+    <Fade bottom>
+      <Testimonials/>
       <div className="separator"/>
     </Fade>
 

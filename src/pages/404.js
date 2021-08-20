@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+import Img from "gatsby-image"
 
 const NotFoundPage = () => (
   <Layout>
@@ -8,6 +9,7 @@ const NotFoundPage = () => (
 			<div className="row align-items-center" style={{height:"100vh"}}>  	
 				<div className="col-12 text-center">  	
   					<h1>404 NOT FOUND</h1> 
+  					<StaticImage  className="hero__img" src="../images/obi-wan.jpg" alt="404" />
   					<br />
   					<h3>These aren't the links you are looking for.</h3>
   					<p>Lucky for you I have some links that you may be interested on :)</p>
@@ -15,7 +17,7 @@ const NotFoundPage = () => (
   		      <Link className="mb-3" to="/" >
   		        Return to my landing page website
   		      </Link><br /><br />
-  		      <Link className="mb-3" to="/portfolio/">
+  		      <Link className="mb-3" to="/portfolios/">
   		        Look my Work and how my experience can help you
   		      </Link><br /><br />
   		      <Link className="mb-3" to="/Samuel-rivera-c-resume.pdf">

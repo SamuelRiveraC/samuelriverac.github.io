@@ -78,7 +78,7 @@ exports.onPostBuild = ({ store }) => {
     encoding: 'utf8'
   })
 
-  const comment = '<!-- Hi! Do you wanted to check my source code to see how it is programmed? I\'ll tell you first its gatsby.js, you can check the repository here https://github.com/SamuelRiveraC/samuelriverac.github.io. Thanks for Visiting my site!. Btw i\'m looking for a Remote job, chances are that if you are looking this is because of that, so thanks for considering me! --> '
+  const comment = '<!-- Hi! Do you wanted to check my source code to see how it is programmed?\nI\'ll tell you first its gatsby.js, you can check the repository here https://github.com/SamuelRiveraC/samuelriverac.github.io. \nThanks for Visiting my site!. Btw i\'m looking for a Job, chances are that if you are looking this is because of that, so thanks for considering me! --> '
 
   fs.writeFileSync(indexHtmlPath, `${comment}${indexHtml}`)
 }

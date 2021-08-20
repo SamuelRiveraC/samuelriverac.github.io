@@ -10,8 +10,6 @@ export default class Hero extends React.Component {
       window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
     }
 
-
-
     return (
     <div className="container" >
       <div className="row hero pb-5 pb-md-0">
@@ -26,8 +24,9 @@ export default class Hero extends React.Component {
         </div>
 
         <div className="col-12 col-md-6 text-center  order-1 order-md-2">
-          <img className="hero__img" src="/static/1c2cd7856efc2d8f127493c443bc5251/0d026/orinoco-0.jpg"/>
+          <StaticImage  className="hero__img" src="../images/hero.png" alt="logo" />
         </div>
+
 
         <div className="hero__arrow" onClick={() => executeScroll()} />
 

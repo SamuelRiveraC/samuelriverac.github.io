@@ -40,43 +40,14 @@ const usePortfolios = () => {
 
 
 const Portfolios = () => {
-  const data = { portfolios: { edges:[] } }
-  // const data = usePortfolios()
+  // const data = { portfolios: { edges:[] } }
+  const data = usePortfolios()
   return (
-<div className="container" >
+  <div className="container" >
     <div className="row portfolio" >
       <div className="col-12" >
         <h2>   Portfolio   </h2>
       </div>
-
-      <div className="col-12 col-md-4">
-        <Link className="portfolio__item" to="/portfolio/">
-          <div className="portfolio__preview">
-            <div className="portfolio__img__container">
-              <img src="/static/1c2cd7856efc2d8f127493c443bc5251/0d026/orinoco-0.jpg"/>
-            </div>
-          </div>
-        </Link>
-      </div>
-      <div className="col-12 col-md-4">
-        <Link className="portfolio__item" to="/portfolio/">
-          <div className="portfolio__preview">
-            <div className="portfolio__img__container">
-              <img src="/static/1c2cd7856efc2d8f127493c443bc5251/0d026/orinoco-0.jpg" />
-            </div>
-          </div>
-        </Link>
-      </div>
-      <div className="col-12 col-md-4">
-        <Link className="portfolio__item" to="/portfolio/">
-          <div className="portfolio__preview">
-            <div className="portfolio__img__container">
-              <img src="/static/1c2cd7856efc2d8f127493c443bc5251/0d026/orinoco-0.jpg" />
-            </div>
-          </div>
-        </Link>
-      </div>
-
       {data.portfolios.edges.map((item,index) => {
         return <div key={index} className="col-12 col-md-4">
           <Link key={index} className="portfolio__item" to={`/portfolio/${item.node.fields.slug}/`}>
