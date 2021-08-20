@@ -1,6 +1,5 @@
 import React from "react"
-import { StaticQuery,graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import CV from "../components/cv"
 export default class Hero extends React.Component {
 
