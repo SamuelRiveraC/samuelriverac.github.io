@@ -8,6 +8,7 @@ import Portfolios from "../components/Portfolios"
 import Testimonials from "../components/Testimonials"
 import Footer from "../components/Footer"
 
+import { graphql } from 'gatsby'
 
 const PortfolioPage = ({data}) => (
   <Layout> <SEO title="Portfolio" />
@@ -15,11 +16,11 @@ const PortfolioPage = ({data}) => (
     <Fade bottom>
     	<div className="container">
     		<div className="row">
-	    		<div className="col-12 text-centerr">
+	    		<div className="col-12 text-center mt-5">
           			<h1> My portfolio </h1>
         		</div>
-    		</div>
-		</div>
+    		  </div>
+		    </div>
 	    <div className="separator"/>
     </Fade>
 

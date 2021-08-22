@@ -11,6 +11,7 @@ import Portfolios from "../components/Portfolios"
 import Testimonials from "../components/Testimonials"
 import Footer from "../components/Footer"
 
+import { graphql } from 'gatsby'
 
 const IndexPage = ({data}) => (
   <Layout> <SEO title="Home" />

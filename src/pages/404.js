@@ -20,9 +20,9 @@ const NotFoundPage = () => (
   		      <Link className="mb-3" to="/portfolios/">
   		        Look my Work and how my experience can help you
   		      </Link><br /><br />
-  		      <Link className="mb-3" to="/Samuel-rivera-c-resume.pdf">
+  		      <a className="mb-3" target="_blank" href="/samuel-rivera-cv.pdf">
   		        Or... maybe are you looking for my CV, here it is for you
-  		      </Link><br /><br />
+  		      </a><br /><br />
 				</div>  	
 			</div>  	
     <div className="separatr" />
