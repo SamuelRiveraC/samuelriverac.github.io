@@ -4,8 +4,8 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 
 const usePortfolios = () => {
   return useStaticQuery(graphql`
-    query {
-      portfolios: allMarkdownRemark(
+    query PortfolioQuery {
+      portfolios: allMarkdownRemark (
         sort: { fields: [frontmatter___date], order: DESC },
         filter: {frontmatter: {posttype: {eq: "portfolio"}}}
       ) {
@@ -48,7 +48,7 @@ const Portfolios = () => {
       <div className="col-12" >
         <h2>   Portfolio   </h2>
       </div>
-      {data.portfolios.edges.map((item,index) => {
+      { data.portfolios.edges.map((item,index) => {
         return <div key={index} className="col-12 col-md-4">
           <Link key={index} className="portfolio__item" to={`/portfolio/${item.node.fields.slug}/`}>
             <div className="portfolio__preview">
@@ -58,7 +58,7 @@ const Portfolios = () => {
             </div>
           </Link>
         </div>
-        })}
+        }) }
     </div>
   </div>
   )
