@@ -27,7 +27,7 @@ export default class Hero extends React.Component {
         </div>
 
 
-        <div className="hero__arrow" onClick={() => executeScroll()} />
+        <a className="hero__arrow" onClick={() => executeScroll()} />
 
       </div>
     </div>

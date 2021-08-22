@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import CV from "../components/cv"
 import CTA from "../components/cta"
 import Skills from "../../content/skills.json"

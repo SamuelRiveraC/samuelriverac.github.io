@@ -31,12 +31,18 @@
 	display: none;
 }
 
+.carousel.carousel-slider .control-arrow {
+	margin:0; padding:0; 
+	min-width: 3rem;
+    height: 100%;
+}
+
 .darkmode {
 	.carousel {
 		.slide { 
-			background: $light_3 !important;
+			background: $dark_2 !important;
 		} .card {
-			background: $light_3 !important;
+			background: $dark_2 !important;
 		} 
 	}	
 }

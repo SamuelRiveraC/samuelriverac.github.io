@@ -31,7 +31,7 @@ export default class Layout extends React.Component {
 
   render () {
     return (
-      <div className={this.state.darkmode ? "app darkmode" : "app"}> 
+      <div className={this.state.darkmode ? "app darkmode" : "app"}>
 
         <Helmet>
          {/*
@@ -85,10 +85,10 @@ export default class Layout extends React.Component {
         </Helmet>
   
 
-        <div className="nav__toggle" onClick={() => this.darkmode() }>
+        <button className="nav__toggle" onClick={() => this.darkmode() }>
           {!this.state.darkmode && <FontAwesomeIcon icon={faMoon} size="2x" /> }
           { this.state.darkmode && <FontAwesomeIcon icon={faSun } size="2x" /> }
-        </div>
+        </button>
 
         {this.props.children}
 

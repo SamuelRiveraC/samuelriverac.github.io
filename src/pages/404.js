@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 const NotFoundPage = () => (
   <Layout>
@@ -9,7 +9,7 @@ const NotFoundPage = () => (
 			<div className="row align-items-center" style={{height:"100vh"}}>  	
 				<div className="col-12 text-center">  	
   					<h1>404 NOT FOUND</h1> 
-  					<StaticImage  className="hero__img" src="../images/obi-wan.jpg" alt="404" />
+  					<StaticImage src="../images/obi-wan.jpg" alt="404" />
   					<br />
   					<h3>These aren't the links you are looking for.</h3>
   					<p>Lucky for you I have some links that you may be interested on :)</p>

@@ -24,7 +24,7 @@ const PortfolioPage = ({data}) => (
     </Fade>
 
     <Fade bottom>
-      <Portfolios/>
+      <Portfolios portfolios={data.portfolios.edges} />
       <div className="separator"/>
     </Fade>
 
@@ -40,5 +40,38 @@ const PortfolioPage = ({data}) => (
   </Layout>
 )
 
-export default IndexPage
+export default PortfolioPage
 
+export const portfolioQuery = graphql`
+  query {
+    portfolios: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: ASC },
+      filter: {frontmatter: {posttype: {eq: "portfolio"}}}
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            thumbnail {
+              childImageSharp {
+                fluid {
+                  src
+                  srcSet
+                  aspectRatio
+                  sizes
+                  base64
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

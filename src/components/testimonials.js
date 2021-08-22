@@ -8,11 +8,12 @@ import { Carousel } from 'react-responsive-carousel';
 export default class Testimonials extends React.Component {
   render () { return (
     <div className="testimonials row justify-content-center" >
-      <h2> Testimonials </h2>
-      
+      <div className="col-12 text-center" >
+        <h2> Testimonials </h2>
+      </div>
       <Carousel className="col-12 col-md-8 testimonial__carousel">
         {TestimonialsJSON.map((data, index) => {
-          return  <div className="card p-5 text-center">
+          return  <div className="p-5 text-center">
             <p> <img src={data.image} alt="testimonial" width="32 px"/> </p>
             <p> 
               <i> <q>
