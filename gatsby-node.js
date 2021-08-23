@@ -1,3 +1,9 @@
+const sharp = require('sharp')
+
+sharp.cache(false)
+sharp.simd(true)
+
+
 const fs = require('fs')
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
@@ -46,17 +52,10 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
-
-
 }
-
-
-
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
@@ -67,18 +66,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-
-
 //comment
 exports.onPostBuild = ({ store }) => {
   const { directory } = store.getState().program
   const indexHtmlPath = path.join(directory, 'public', 'index.html')
-
   const indexHtml = fs.readFileSync(indexHtmlPath, {
     encoding: 'utf8'
   })
-
   const comment = '<!-- Hi! Do you wanted to check my source code to see how it is programmed?\nI\'ll tell you first its gatsby.js, you can check the repository here https://github.com/SamuelRiveraC/samuelriverac.github.io. \nThanks for Visiting my site!. Btw i\'m looking for a Job, chances are that if you are looking this is because of that, so thanks for considering me! --> '
-
   fs.writeFileSync(indexHtmlPath, `${comment}${indexHtml}`)
 }

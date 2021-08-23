@@ -85,14 +85,14 @@ const PortfolioPostTemplate = ({ data, pageContext, location }) => {
           </div>
           <div className="col-12 mt-3 text-center">
             {previous && (
-              <Link className="btn mx-3" to={'portfolio/'+previous.fields.slug} rel="prev">
+              <Link className="btn mx-3" to={'/portfolio'+previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
             {next && (
-              <Link className="btn mx-3" to={'portfolio/'+next.fields.slug} rel="next">
+              <Link className="btn mx-3" to={'/portfolio'+next.fields.slug} rel="next">
                 {next.frontmatter.title} →
-              </Link>
+              </Link> 
             )}
           </div>
         </div>
