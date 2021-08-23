@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import CV from "../components/cv"
+
 export default class Hero extends React.Component {
 
 	render () {
@@ -23,7 +24,7 @@ export default class Hero extends React.Component {
         </div>
 
         <div className="col-12 col-md-6 text-center  order-1 order-md-2">
-          <StaticImage  className="hero__img" src="../images/hero.png" alt="logo" />
+          <StaticImage src="../images/Hero.png" placeholder="blurred" alt="Hero" />
         </div>
 
 

@@ -17,7 +17,7 @@ const NotFoundPage = () => (
   		      <Link className="mb-3" to="/" >
   		        Return to my landing page website
   		      </Link><br /><br />
-  		      <Link className="mb-3" to="/portfolios/">
+  		      <Link className="mb-3" to="/portfolio/">
   		        Look my Work and how my experience can help you
   		      </Link><br /><br />
   		      <a className="mb-3" target="_blank" href="/samuel-rivera-cv.pdf">

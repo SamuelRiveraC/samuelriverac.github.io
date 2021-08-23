@@ -68,13 +68,10 @@ export const portfolioQuery = graphql`
             description
             thumbnail {
               childImageSharp {
-                fluid {
-                  src
-                  srcSet
-                  aspectRatio
-                  sizes
-                  base64
-                }
+                gatsbyImageData(
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
               }
             }
           }
